@@ -16,7 +16,7 @@ DATA:
 2. last_election_data: contains tweets from this government
 
 ----WHAT IS THE OUTPUT----
-retrieve_tweets: returns a dataset with the following information: index number, party name, date of posting, tweet content, whether the party is considered populist or not, it's role in the House of Representatives (opposition/coalition), horizontal ideology (left/right/middle), vertical ideology (progressive/conservative/middle).
+retrieve_tweets: returns a dataset with the following information: index number, party name, date of posting, tweet content, whether the party is considered populist or not, it's role in the House of Representatives (opposition/coalition), horizontal ideology (left/right/middle), vertical ideology (progressive/conservative/middle). Current limit is 500 tweets per party.
 
 ----DATA USED----
 The following twitter accounts have been mined: 
@@ -37,7 +37,7 @@ The following twitter accounts have been mined:
  - BBB              @BoerBurgerB
  - BIJ1             @PolitiekBIJ1
 
-One dataset contains tweets from the current government (since )
+One dataset contains tweets from the current government (since march 26th 2021)
 The other dataset contains tweets from the previous government as well (since march 15th 2017)
 
 ----CONTACT----
