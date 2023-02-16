@@ -1,0 +1,124 @@
+{
+    "parties": [
+        {
+        "party": "VVD",
+        "twitter_handle": "vvd",
+        "considered_populist": "no",
+        "role": "coalition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "CDA",
+        "twitter_handle": "cdavandaag",
+        "considered_populist": "no",
+        "role": "coalition",
+        "ideology_l_r": "middle",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "D66",
+        "twitter_handle": "d66",
+        "considered_populist": "no",
+        "role": "coalition",
+        "ideology_l_r": "middle",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "ChristenUnie",
+        "twitter_handle": "christenunie",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "middle"
+        },
+        {
+        "party": "SP",
+        "twitter_handle": "spnl",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "PvdA",
+        "twitter_handle": "pvda",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "GroenLinks",
+        "twitter_handle": "groenlinks",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "PvdD",
+        "twitter_handle": "partijvddieren",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "FvD",
+        "twitter_handle": "fvdemocratie",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "JA21",
+        "twitter_handle": "juisteantwoord",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "SGP",
+        "twitter_handle": "sgpnieuws",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "DENK",
+        "twitter_handle": "denknl",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "Volt",
+        "twitter_handle": "voltnederland",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "middle",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "BBB",
+        "twitter_handle": "bperburgerb",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "BIJ1",
+        "twitter_handle": "politiekbij1",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        }
+    ]
+}
