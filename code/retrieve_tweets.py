@@ -5,8 +5,9 @@ import json
 from helper import get_tweets
 
 party_data_path = '../data/party_data.json'
-outfile = '../data/last_election_small.csv'
-limit_per_party = 500
+outfile = '../data/last_election_large.csv'
+# If no limit wanted: use 1
+limit_per_party = 0
 since = '2021-03-26'
 until = '2023-02-17'
 
