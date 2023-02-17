@@ -7,16 +7,17 @@ This code can be used to collect and analyse twitter data from Dutch political p
 This GitHub contains two different folders: a folder with Python code and a folder with datasets.
 
 CODE: 
-1. modules.py: contains helper modules
-2. retrieve_tweets.py: mines Twitter for tweets, no API keys necessary. Will work on a simple way to change the settings. For now it's mixed in the code.
-3. data_notes.txt: just some personal notes to use besides my coding. Will delete later.
+1. modules.py: contains helper modules: clean_tweets, clean_date, get_tweets.
+2. retrieve_tweets.py: mines Twitter for tweets, no API keys necessary. Settings can be changed here.
 
 DATA:
 1. party_data.json: contains a .json file with information about the different parties. This data can be edited here if needed.
-2. last_election_data: contains tweets from this government
+2. last_election_data_small: contains tweets from the current Dutch government, with up to 500 tweets per party up to the 17th of february 2023. The dataset contains 6666 tweets.
+3. last_election_data_large: contains all tweets from the current Dutch government up to the 17th of february 2023. The dataset contains 13.791 tweets.
+4. coalition_large: contains all tweets from the current coalition, which has been together since 2015. The dataset contains 105.986 tweets.
 
 ----WHAT IS THE OUTPUT----
-retrieve_tweets: returns a dataset with the following information: index number, party name, date of posting, tweet content, whether the party is considered populist or not, it's role in the House of Representatives (opposition/coalition), horizontal ideology (left/right/middle), vertical ideology (progressive/conservative/middle). Current limit is 500 tweets per party.
+retrieve_tweets: returns a dataset with tweets. The following information is included: index number, party name, date of posting, tweet content, whether the party is considered populist or not, it's role in the House of Representatives (opposition/coalition), horizontal ideology (left/right/middle), vertical ideology (progressive/conservative/middle).
 
 ----DATA USED----
 The following twitter accounts have been mined: 
@@ -37,14 +38,18 @@ The following twitter accounts have been mined:
  - BBB              @BoerBurgerB
  - BIJ1             @PolitiekBIJ1
 
-One dataset contains tweets from the current government (since march 26th 2021)
-The other dataset contains tweets from the previous government as well (since march 15th 2017)
+Working on adding politicians as well.
+
+----NEEDED PACKAGES----
+For retrieving the datasets:
+- snscraper
+- json
+- csv
+
 
 ----CONTACT----
 m.r.brandsma@student.vu.nl
 
 Retrieve the data:
-1. For this, you will need 
-1. To retrieve the data, run data/retrieve_tweets.py 
-2.
+1. To retrieve the data, run data/retrieve_tweets.py. You can adjust settings here as well.
  
