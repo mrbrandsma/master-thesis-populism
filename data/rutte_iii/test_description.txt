@@ -1,0 +1,22 @@
+Total data size: 10140
+
+Description per party:
+- DENK: 358
+- D66: 2123
+- BBB: 1081
+- PvdD: 727
+- BIJ1: 392
+- PVV: 827
+- VVD: 329
+- CDA: 916
+- PvdA: 523
+- ChristenUnie: 115
+- Volt: 452
+- FvD: 690
+- GroenLinks: 651
+- JA21: 288
+- SGP: 183
+- SP: 485
+
+Division populism:
+- Non-populist: 6769- Populist: 3371

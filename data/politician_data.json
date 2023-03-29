@@ -1,0 +1,132 @@
+{
+    "parties": [
+        {
+        "party": "Mark Rutte",
+        "twitter_handle": "markrutte",
+        "considered_populist": "no",
+        "role": "coalition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "Wopke Hoekstra",
+        "twitter_handle": "WBHoekstra",
+        "considered_populist": "no",
+        "role": "coalition",
+        "ideology_l_r": "middle",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "Sigrid Kaag",
+        "twitter_handle": "SigridKaag",
+        "considered_populist": "no",
+        "role": "coalition",
+        "ideology_l_r": "middle",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "Gert-Jan Segers",
+        "twitter_handle": "gertjansegers",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "middle"
+        },
+        {
+        "party": "Lilian Marijnissen",
+        "twitter_handle": "MarijnissenL",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "Attje Kuiken",
+        "twitter_handle": "attjekuiken",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "Jesse Klaver",
+        "twitter_handle": "jesseklaver",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "Esther Ouwehand",
+        "twitter_handle": "estherouwehand",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "Thierry Baudet",
+        "twitter_handle": "thierrybaudet",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "Joost Eerdmans",
+        "twitter_handle": "Eerdmans",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "Kees van der Staaij",
+        "twitter_handle": "keesvdstaaij",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "Farid Azarkan",
+        "twitter_handle": "F_azarkan",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "Laurens Dassen",
+        "twitter_handle": "DassenLaurens",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "middle",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "Caroline van der Plas",
+        "twitter_handle": "lientje1967",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "Sylvana Simons",
+        "twitter_handle": "SylvanaBIJ1",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "Geert Wilders",
+        "twitter_handle": "geertwilderspvv",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        }
+    ]
+}

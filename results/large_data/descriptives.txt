@@ -1,0 +1,102 @@
+
+--------------EVALUATION---------------
+Micro recall: 0.8676855895196507
+Macro recall: 0.8448255401918521
+Micro precision: 0.8676855895196507
+Macro precision: 0.8426976505277812
+Micro f-score: 0.8676855895196506
+Macro f-score: 0.8676855895196506
+
+Classification report: 
+['no' 'yes']
+              precision    recall  f1-score   support
+
+           0  0.9070889 0.9027343 0.9049064      4791
+           1  0.7783064 0.7869168 0.7825879      2079
+
+    accuracy                      0.8676856      6870
+   macro avg  0.8426977 0.8448255 0.8437471      6870
+weighted avg  0.8681167 0.8676856 0.8678903      6870
+
+Confusion matrix: 
+['no' 'yes']
+[[4325  466]
+ [ 443 1636]]
+
+Sentence check:
+['no' 'yes']
+Instance, true label, predicted label
+130. "Kijk LIVE mee naar de persconferentie van premier Mark Rutte (LINK)": 0, 0
+260. "In #HASHTAG gebeurt het! Vandaag live vanuit @USER Een interview met @USER door @USER om 14.05 uur en de toespraak van Lilian Marijnissen rond 14.50 uur.  Mis het niet en volg het via: (LINK) (LINK)": 1, 1
+390. "@USER Dankjewel Hedwina! 🧡💙 ^SB (LINK)": 0, 0
+520. "Vieze lucht. Vervuild water. Veel herrie. Dat is slecht voor je gezondheid. Daarom:- Milieuschade vooraf voorkomen, niet achteraf oplossen- Grenzen aan uitstoot van schadelijke stoffen- Stoppen met gebruik giftige stoffenMeer over onze plannen 👇(LINK) (LINK)": 0, 0
+650. "Géén permanente verandering, géén nieuw normaal! 🔴 Het kabinet kwam te laat met de lockdown en bouwt die lockdown nu véél te laat en te langzaam af. Natuurlijk moeten we kwetsbare groepen beschermen, maar de rest van de samenleving kan weer open - zonder "nieuw normaal"! #HASHTAG ⤵️ (LINK)": 1, 1
+---------------------------------------
+
+--------------EVALUATION---------------
+Micro recall: 0.8641921397379912
+Macro recall: 0.8371476038977604
+Micro precision: 0.8641921397379912
+Macro precision: 0.8398598320008097
+Micro f-score: 0.8641921397379912
+Macro f-score: 0.8641921397379912
+
+Classification report: 
+['no' 'yes']
+              precision    recall  f1-score   support
+
+           0  0.9002075 0.9056564 0.9029237      4791
+           1  0.7795122 0.7686388 0.7740373      2079
+
+    accuracy                      0.8641921      6870
+   macro avg  0.8398598 0.8371476 0.8384805      6870
+weighted avg  0.8636827 0.8641921 0.8639201      6870
+
+Confusion matrix: 
+['no' 'yes']
+[[4339  452]
+ [ 481 1598]]
+
+Sentence check:
+['no' 'yes']
+Instance, true label, predicted label
+130. "Kijk LIVE mee naar de persconferentie van premier Mark Rutte (LINK)": 0, 0
+260. "In #HASHTAG gebeurt het! Vandaag live vanuit @USER Een interview met @USER door @USER om 14.05 uur en de toespraak van Lilian Marijnissen rond 14.50 uur.  Mis het niet en volg het via: (LINK) (LINK)": 1, 1
+390. "@USER Dankjewel Hedwina! 🧡💙 ^SB (LINK)": 0, 0
+520. "Vieze lucht. Vervuild water. Veel herrie. Dat is slecht voor je gezondheid. Daarom:- Milieuschade vooraf voorkomen, niet achteraf oplossen- Grenzen aan uitstoot van schadelijke stoffen- Stoppen met gebruik giftige stoffenMeer over onze plannen 👇(LINK) (LINK)": 0, 0
+650. "Géén permanente verandering, géén nieuw normaal! 🔴 Het kabinet kwam te laat met de lockdown en bouwt die lockdown nu véél te laat en te langzaam af. Natuurlijk moeten we kwetsbare groepen beschermen, maar de rest van de samenleving kan weer open - zonder "nieuw normaal"! #HASHTAG ⤵️ (LINK)": 1, 1
+---------------------------------------
+
+--------------EVALUATION---------------
+Micro recall: 0.8327004219409283
+Macro recall: 0.8320062309810172
+Micro precision: 0.8327004219409283
+Macro precision: 0.8294557654758958
+Micro f-score: 0.8327004219409282
+Macro f-score: 0.8327004219409282
+
+Classification report: 
+['no' 'yes']
+              precision    recall  f1-score   support
+
+           0  0.8627451 0.8373134 0.8498390      2680
+           1  0.7961664 0.8266990 0.8111455      2060
+
+    accuracy                      0.8327004      4740
+   macro avg  0.8294558 0.8320062 0.8304923      4740
+weighted avg  0.8338101 0.8327004 0.8330229      4740
+
+Confusion matrix: 
+['no' 'yes']
+[[2244  436]
+ [ 357 1703]]
+
+Sentence check:
+['no' 'yes']
+Instance, true label, predicted label
+130. "We zien het bij de gaswinning in Groningen en bij de toeslagenaffaire. De politiek komt in actie als de druk te hoog wordt. Dat is te laat.Het tijd voor nieuw leiderschap. Leiderschap dat over de horizon van de crisis heen kijkt.-@USER #HASHTAG (LINK)": 0, 0
+260. "Word NU lid van FVD! Hoe meer leden wij voor 1 januari hebben, des te minder subsidie de kartelpartijen krijgen - en des te meer er naar ons gaat. Dat betekent dat wij ons nog beter kunnen inzetten voor uw belangen! Wacht dus niet en word lid van FVD! (LINK) (LINK)": 1, 1
+390. "Onze leden hebben gesproken! De voorstanders van de nieuwe referendumwet hebben met 55% een mooie overwinning behaald. Partijleider @USER neigde naar een tegenstem, maar zal, in tegenstelling tot Mark Rutte, de uitslag honoreren. Zo werkt democratie! #HASHTAG (LINK)": 1, 0
+520. "Wat een overweldigende steun! Met uw hulp bouwen we een campagne waarin heel Nederland kennismaakt met de standpunten van #HASHTAG Onze vrijheid terug. Een einde aan klimaatbeleid, massale immigratie en de EU. Weer investeren in ons eigen land. Steun ons ook! (LINK) (LINK)": 1, 1
+650. "Pensioenfondsen maken &gt;6% rendement maar hanteren kunstmatig lage ECB-rente waardoor schijntekort ontstaat. #HASHTAG wil rekenrente NU omhoog, altijd AOW na 40 jaar zwaar werk en pensioenen weer indexeren! Het kán met onze spaarpotten. Bekijk hier de speech: (LINK)": 1, 1
+---------------------------------------

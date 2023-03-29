@@ -1,0 +1,22 @@
+Total data size: 17537
+
+Description per party:
+- Mark Rutte: 5
+- Wopke Hoekstra: 450
+- Sigrid Kaag: 53
+- Gert-Jan Segers: 1437
+- Lilian Marijnissen: 972
+- Attje Kuiken: 604
+- Jesse Klaver: 412
+- Esther Ouwehand: 308
+- Thierry Baudet: 1038
+- Joost Eerdmans: 57
+- Kees van der Staaij: 53
+- Farid Azarkan: 290
+- Laurens Dassen: 268
+- Caroline van der Plas: 6979
+- Sylvana Simons: 3465
+- Geert Wilders: 1146
+
+Division populism:
+- Non-populist: 7345- Populist: 10192

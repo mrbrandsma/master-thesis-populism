@@ -1,0 +1,76 @@
+{
+    "parties": [
+        {
+        "party": "D66",
+        "twitter_handle": "d66",
+        "considered_populist": "no",
+        "role": "coalition",
+        "ideology_l_r": "middle",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "VVD",
+        "twitter_handle": "vvd",
+        "considered_populist": "no",
+        "role": "coalition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "ChristenUnie",
+        "twitter_handle": "christenunie",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "middle"
+        },
+        {
+        "party": "SGP",
+        "twitter_handle": "sgpnieuws",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "PvdA",
+        "twitter_handle": "pvda",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "GroenLinks",
+        "twitter_handle": "groenlinks",
+        "considered_populist": "no",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        },
+        {
+        "party": "FvD",
+        "twitter_handle": "fvdemocratie",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "PVV",
+        "twitter_handle": "geertwilderspvv",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
+        },
+        {
+        "party": "SP",
+        "twitter_handle": "spnl",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "left",
+        "ideology_p_c": "progressive"
+        }
+    ]
+}

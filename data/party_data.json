@@ -106,7 +106,7 @@
         },
         {
         "party": "BBB",
-        "twitter_handle": "bperburgerb",
+        "twitter_handle": "boerburgerb",
         "considered_populist": "yes",
         "role": "opposition",
         "ideology_l_r": "right",
@@ -119,6 +119,14 @@
         "role": "opposition",
         "ideology_l_r": "left",
         "ideology_p_c": "progressive"
+        },
+        {
+        "party": "PVV",
+        "twitter_handle": "geertwilderspvv",
+        "considered_populist": "yes",
+        "role": "opposition",
+        "ideology_l_r": "right",
+        "ideology_p_c": "conservative"
         }
     ]
 }

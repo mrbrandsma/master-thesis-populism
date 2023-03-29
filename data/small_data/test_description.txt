@@ -1,0 +1,14 @@
+Total data size: 960
+
+Description per party:
+- CDA: 66
+- SP: 87
+- FvD: 204
+- GroenLinks: 135
+- PVV: 186
+- PvdA: 105
+- D66: 144
+- ChristenUnie: 33
+
+Division populism:
+- Non-populist: 483- Populist: 477

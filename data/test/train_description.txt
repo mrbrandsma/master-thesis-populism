@@ -1,0 +1,22 @@
+Total data size: 98
+
+Description per party:
+- PVV: 7
+- VVD: 7
+- BBB: 8
+- PvdA: 6
+- FvD: 8
+- SP: 6
+- CDA: 4
+- BIJ1: 5
+- ChristenUnie: 6
+- D66: 7
+- SGP: 7
+- JA21: 6
+- DENK: 5
+- Volt: 4
+- PvdD: 6
+- GroenLinks: 6
+
+Division populism:
+- Non-populist: 63- Populist: 35

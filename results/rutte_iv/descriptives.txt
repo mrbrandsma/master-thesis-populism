@@ -1,0 +1,102 @@
+
+--------------EVALUATION---------------
+Micro recall: 0.8314553990610328
+Macro recall: 0.8092225889255592
+Micro precision: 0.8314553990610328
+Macro precision: 0.8637353587018921
+Micro f-score: 0.8314553990610328
+Macro f-score: 0.8314553990610328
+
+Classification report: 
+['no' 'yes']
+              precision    recall  f1-score   support
+
+           0  0.9429477 0.6481481 0.7682376       918
+           1  0.7845230 0.9702970 0.8675765      1212
+
+    accuracy                      0.8314554      2130
+   macro avg  0.8637354 0.8092226 0.8179071      2130
+weighted avg  0.8528018 0.8314554 0.8247628      2130
+
+Confusion matrix: 
+['no' 'yes']
+[[ 595  323]
+ [  36 1176]]
+
+Sentence check:
+['no' 'yes']
+Instance, true label, predicted label
+130. "Samen met PARTY en PARTY hebben we een plan voor een progressieve vermogensbelasting. ⤵️https://t.co/dlU0hkFlpu": 0, 0
+260. "@PGKroeger @lientje1967 Sinds wanneer zit Rutte in Provinciale Staten? 🙈": 1, 1
+390. ""Mensen vragen mij vaak: ben je groen of ben je links? Maar die zijn voor mij met elkaar verbonden.Want het kapitalisme is een systeem waarin winsten van grote bedrijven voorgaan op natuur, schone lucht én een goed bestaan voor mensen."- @jesseklaver #HASHTAG https://t.co/J4YNMGaqgI": 0, 0
+520. "@FrankVanZuilen Dat klopt niet, maar willen ze je graag laten geloven.... De huurders waren nu aan de beurt en gaan dus voordeel missen...": 1, 1
+650. "@Skilium @MaartenSchrode1 Dan wordt het verschil met het buitenland nog gunstiger": 1, 1
+---------------------------------------
+
+--------------EVALUATION---------------
+Micro recall: 0.8615023474178404
+Macro recall: 0.8621815612933843
+Micro precision: 0.8615023474178404
+Macro precision: 0.8581918011322576
+Micro f-score: 0.8615023474178404
+Macro f-score: 0.8615023474178404
+
+Classification report: 
+['no' 'yes']
+              precision    recall  f1-score   support
+
+           0  0.8214654 0.8671024 0.8436672       918
+           1  0.8949182 0.8572607 0.8756848      1212
+
+    accuracy                      0.8615023      2130
+   macro avg  0.8581918 0.8621816 0.8596760      2130
+weighted avg  0.8632611 0.8615023 0.8618857      2130
+
+Confusion matrix: 
+['no' 'yes']
+[[ 796  122]
+ [ 173 1039]]
+
+Sentence check:
+['no' 'yes']
+Instance, true label, predicted label
+130. "Samen met PARTY en PARTY hebben we een plan voor een progressieve vermogensbelasting. ⤵️https://t.co/dlU0hkFlpu": 0, 0
+260. "@PGKroeger @lientje1967 Sinds wanneer zit Rutte in Provinciale Staten? 🙈": 1, 1
+390. ""Mensen vragen mij vaak: ben je groen of ben je links? Maar die zijn voor mij met elkaar verbonden.Want het kapitalisme is een systeem waarin winsten van grote bedrijven voorgaan op natuur, schone lucht én een goed bestaan voor mensen."- @jesseklaver #HASHTAG https://t.co/J4YNMGaqgI": 0, 0
+520. "@FrankVanZuilen Dat klopt niet, maar willen ze je graag laten geloven.... De huurders waren nu aan de beurt en gaan dus voordeel missen...": 1, 1
+650. "@Skilium @MaartenSchrode1 Dan wordt het verschil met het buitenland nog gunstiger": 1, 1
+---------------------------------------
+
+--------------EVALUATION---------------
+Micro recall: 0.7455399061032864
+Macro recall: 0.7732317349381996
+Micro precision: 0.7455399061032864
+Macro precision: 0.7998591460383344
+Micro f-score: 0.7455399061032864
+Macro f-score: 0.7455399061032864
+
+Classification report: 
+['no' 'yes']
+              precision    recall  f1-score   support
+
+           0  0.6331445 0.9738562 0.7673820       918
+           1  0.9665738 0.5726073 0.7191710      1212
+
+    accuracy                      0.7455399      2130
+   macro avg  0.7998591 0.7732317 0.7432765      2130
+weighted avg  0.8228705 0.7455399 0.7399492      2130
+
+Confusion matrix: 
+['no' 'yes']
+[[894  24]
+ [518 694]]
+
+Sentence check:
+['no' 'yes']
+Instance, true label, predicted label
+130. "Samen met PARTY en PARTY hebben we een plan voor een progressieve vermogensbelasting. ⤵️https://t.co/dlU0hkFlpu": 0, 0
+260. "@PGKroeger @lientje1967 Sinds wanneer zit Rutte in Provinciale Staten? 🙈": 1, 1
+390. ""Mensen vragen mij vaak: ben je groen of ben je links? Maar die zijn voor mij met elkaar verbonden.Want het kapitalisme is een systeem waarin winsten van grote bedrijven voorgaan op natuur, schone lucht én een goed bestaan voor mensen."- @jesseklaver #HASHTAG https://t.co/J4YNMGaqgI": 0, 0
+520. "@FrankVanZuilen Dat klopt niet, maar willen ze je graag laten geloven.... De huurders waren nu aan de beurt en gaan dus voordeel missen...": 1, 1
+650. "@Skilium @MaartenSchrode1 Dan wordt het verschil met het buitenland nog gunstiger": 1, 0
+---------------------------------------
