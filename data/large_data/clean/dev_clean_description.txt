@@ -1,0 +1,16 @@
+Total data size: 4628
+
+Description per party:
+- FvD: 728
+- PvdA: 532
+- PVV: 763
+- D66: 814
+- VVD: 327
+- GroenLinks: 664
+- SP: 504
+- SGP: 169
+- CU: 118
+
+Division populism:
+- Non-populist: 2630
+- Populist: 1998

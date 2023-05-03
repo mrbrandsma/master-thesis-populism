@@ -1,0 +1,46 @@
+READABILITY
+
+
+
+LUATION---------------
+
+Classification report: 
+['no' 'yes']
+              precision    recall  f1-score   support
+
+           0  0.5693015 0.9893455 0.7227241      2628
+           1  0.5692308 0.0184631 0.0357661      2004
+
+    accuracy                      0.5693005      4632
+   macro avg  0.5692661 0.5039043 0.3792451      4632
+weighted avg  0.5692709 0.5693005 0.4255169      4632
+
+Confusion matrix: 
+['no' 'yes']
+[[2600   28]
+ [1967   37]]
+
+Sentence check:
+['no' 'yes']
+Instance, true label, predicted label
+130. ".@USER wil álle Nederlandse soevereiniteit weggeven. Maar over #HASHTAG hebben ze onzinverhalen over "buitenlandse inmenging".@USER wil weten: Hoe noemt @USER het als een ambassadeur een partijleider als dank voor steun aan #HASHTAG een penthouse in Scheveningen geeft? (LINK)": 1, 0
+260. ""De problemen op de ‘woningmarkt’, de problemen qua volkshuisvesting, zijn nog nooit zo groot geweest. Er is een woonkloof: tussen mensen die op tijd een huis konden kopen of huren, en mensen die dat gewoon niet meer lukt."Kamerlid @USER over de #HASHTAG (LINK)": 0, 0
+390. "Luistertip! 📻Straks is @USER bij @USER over het Zorgbuurthuis.Luister vanaf 12.05 uur mee via @USER Zorgbuurthuis in Oss is opgeleverd! Lees hier meer 👇(LINK) (LINK)": 1, 0
+520. "Waarom voelen we ons steeds vaker niet meer veilig? We bespreken het om 17:00 bij #HASHTAG Live met oud-politieprominent Klaas Wilting.Ook in de uitzending: ondernemer Johan Habets over de evenementenbranche en Statenlid Michiel Fiscalini over kernenergie in Utrecht. Tot zo! (LINK)": 1, 0
+650. "Vandaag zijn @USER @USER &amp; @USER exact één jaar Tweede Kamerlid voor de PARTY! Vergeet ze niet te volgen om te zien hoeveel werk ze verzetten🙂 (LINK)": 0, 0
+780. "PARTY stevig op 24 zetels! #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 1, 0
+910. "Vandaag is Aswoensdag. Dit is een katholieke traditie die de start is van de Vastentijd en voorbereiding op het Paasfeest.Iedereen die deze tijd van bezinning ingaat een gezegende tijd gewenst! #HASHTAG (LINK)": 0, 0
+1040. "Wilders: “Wat een gênante vertoning op het podium net”@USER #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 1, 0
+1170. "We zijn live met de online talkshow #HASHTAG Met kandidaat-Kamerleden, wetenschappers en activisten. 💚Kijk mee via (LINK)": 0, 0
+1300. "Al meer dan 10 DUIZEND mensen openden een gesprek met onze Zweeflijn. 📲😱Heb je een vraag over onze plannen? Tot en met vanavond zit ons team van vrijwilligers, beleidsmedewerkers en Kamerleden klaar om je te antwoorden!🔥 (LINK) 🔥": 0, 0
+1430. "Het voorstel om giften aan partijen te maximeren op €100.000, is aangenomen! Een belangrijke stap waarmee we de macht van geld kunnen inperken. Want in een democratie telt iedere stem even zwaar. 🗳 (LINK)": 0, 0
+1560. "Belachelijk besluit. En wat een selectieve verontwaardiging over de ‘rechtsorde’. Ze zijn wel eerder met zijn allen naar Iran en Saoedi-Arabië geweest waar ze vrouwen stenigen en afvalligen onthoofden. Maar dat was geen probleem.": 1, 0
+1690. "#HASHTAG wil investeren in snelle dataverbindingen voor heel NL zodat wij het snelste internet ter wereld krijgen. Veel belangrijker voor ons #HASHTAG dan het afschaffen van de #HASHTAG van Rutte. (LINK)": 1, 0
+1820. "De oorlog in Oekraïne heeft grote gevolgen voor mensen. Daarom maken we nóg ambitieuzere afspraken.▶️ We halen de NAVO-norm in 2024.▶️ Het minimumloon gaat sneller omhoog.▶️ Vervuilende industrie en grote bedrijven betalen meer belasting.(LINK)": 0, 0
+1950. ""De situatie op Griekse eilanden is dramatisch en de Europese Unie en Griekenland moeten nu in actie komen."Oproep van @USER (LINK)": 0, 0
+2080. "Het zijn leugenaars.Geloof ze nooit.#HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 1, 0
+2210. "Meer weten over hoe we lokaal de markt uit de zorg halen? Kijk hoe we dat doen in #HASHTAG": 1, 0
+2340. "Dus PARTY, de PARTY, de PARTY en PARTY gaan demonstreren tegen de PARTY. Wat een armoede. Vier partijen die allemaal op fors verlies staan in de peilingen. Samen tegen de enige echte volkspartij die op winst staat. Bijna zielig.": 1, 0
+2470. "Hoe gezond je bent hangt niet alleen af van het lichaam. Je opleiding, werk en sociale omstandigheden hebben daar veel invloed op. Daarom willen we gezondheid een prominente plek geven in onze samenleving. Zo kunnen we voorkomen dat mensen ziek worden.(LINK)": 0, 0
+2600. "@USER @USER Wellicht heb je het gemist, maar we zijn in maart naar de stembus gegaan. PARTY kreeg meer dan 1.5 miljoen stemmen. ^Tom": 0, 0
+---------------------------------------
