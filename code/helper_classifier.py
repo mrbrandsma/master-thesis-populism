@@ -75,7 +75,7 @@ def svm_classifier(vector, classes, max_iterations):
     A short function that creates a classifier that predicts labels of
     the test data. Returns this classifier.
     """
-    svm_linear_clf = svm.LinearSVC(max_iter=max_iterations)
+    svm_linear_clf = svm.LinearSVC(max_iter=max_iterations, dual=False)
     svm_linear_clf.fit(vector, classes)
 
     return svm_linear_clf
@@ -88,34 +88,6 @@ def evaluator(test_classes, test_prediction, label_encoder, test_instances, data
     # Open file to write evaluation statistics
     f = open(f'../results/{dataset}/descriptives_{outfile}.txt', 'a', encoding="utf-8")
     f.write('\n--------------EVALUATION---------------\n')
-
-    # Calculate all statistics
-    # #micro_recall = sklearn.metrics.recall_score(y_true=test_classes, 
-    #                                             y_pred=test_prediction, 
-    #                                             average='micro')
-    # #macro_recall = sklearn.metrics.recall_score(y_true=test_classes, 
-    #                                             y_pred=test_prediction, 
-    #                                             average='macro')
-    # #micro_precision = sklearn.metrics.precision_score(y_true=test_classes, 
-    #                                                   y_pred=test_prediction, 
-    #                                                   average='micro')
-    # #macro_precision = sklearn.metrics.precision_score(y_true=test_classes, 
-    #                                                   y_pred=test_prediction, 
-    #                                                   average='macro')
-    # #micro_f = sklearn.metrics.f1_score(y_true=test_classes, 
-    #                                    y_pred=test_prediction, 
-    #                                    average='micro')
-    # #macro_f = sklearn.metrics.f1_score(y_true=test_classes, 
-    #                                    y_pred=test_prediction, 
-    #                                    average='macro')
-
-    # Write the data to file
-    #f.write(f'Micro recall: {micro_recall}\n')
-    #f.write(f'Macro recall: {macro_recall}\n')
-    #f.write(f'Micro precision: {micro_precision}\n')
-    #f.write(f'Macro precision: {macro_precision}\n')
-    #f.write(f'Micro f-score: {micro_f}\n')
-    #f.write(f'Macro f-score: {micro_f}\n')
 
     # Get the classification report
     report = classification_report(test_classes, test_prediction, digits = 7)
@@ -135,28 +107,70 @@ def evaluator(test_classes, test_prediction, label_encoder, test_instances, data
 
     # Create heatmap
     sns.heatmap(cf_matrix, annot=True, fmt='.2%', cmap='Blues')
-    plt.savefig(f'../results/{dataset}/heatmap.png')
+    plt.savefig(f'../results/{dataset}/heatmap_{outfile}.png')
     plt.clf()
 
-    # Store twenty different cases
-    f.write('\nSentence check:\n')
-    f.write(f'{label_encoder.classes_}\n')
-    f.write('Instance, true label, predicted label\n')
-    
-    instance = 0
-    for i in range(20):
-        instance += 130
-        f.write(f'{instance}. "{test_instances[instance]}": {test_classes[instance]}, {test_prediction[instance]}\n')
+    # Get the error analysis
+    error_analysis(test_instances, test_classes, test_prediction, dataset, outfile, label_encoder)
 
     # Close file
     f.write('---------------------------------------\n')
     f.close()
 
 
+def error_analysis(tweet, gold_label, prediction, dataset, outfile, label_encoder):
+    """
+    Prints a certain amount of mistakes and a certain amount of good predictions.
+    """
+    # Open file to write to
+    f = open(f'../results/{dataset}/descriptives_{outfile}.txt', 'a', encoding="utf-8")
+    f.write('\n--------------ERROR ANALYSIS---------------\n')
+
+    # Change the amount of mistakes printed here
+    amount_of_mistakes = int(40 / 4)
+
+    # Merge all data together
+    data_together = zip(tweet, gold_label, prediction)
+    labels = ['Tweet', 'Gold label', 'Prediction']
+    predictions_dataframe = pd.DataFrame(data_together, columns = labels)
+
+    f.write("MISTAKES:\n")
+    
+    labels = label_encoder.classes_
+
+    # Order examples
+    populist_examples = predictions_dataframe.loc[predictions_dataframe['Gold label'] == 0]
+    non_populist_examples = predictions_dataframe.loc[predictions_dataframe['Gold label'] == 1]
+    
+    f.write(f">{labels[0]} tweets predicted as {labels[-1]} tweets:\n")
+    wrong_populist = populist_examples.loc[populist_examples['Prediction'] == 1]
+    print_score_string = wrong_populist.to_string(header=True, index=False, max_rows=amount_of_mistakes, max_cols=1)
+    f.write(print_score_string)
+    f.write('\n\n')
+
+    f.write(f">{labels[-1]} tweets predicted as {labels[0]} tweets:\n")
+    wrong_non_populist = non_populist_examples.loc[non_populist_examples['Prediction'] == 0]
+    print_score_string = wrong_non_populist.to_string(header=True, index=False, max_rows=amount_of_mistakes, max_cols=1)
+    f.write(print_score_string)
+    f.write('\n\n')
+
+    f.write("CORRECT:\n")
+    f.write(f">{labels[0]} tweets predicted as {labels[0]} tweets:\n")
+    correct_populist = populist_examples.loc[populist_examples['Prediction'] == 0]
+    print_score_string = correct_populist.to_string(header=True, index=False, max_rows=amount_of_mistakes, max_cols=1)
+    f.write(print_score_string)
+    f.write('\n\n')
+
+    f.write(f">{labels[-1]} tweets predicted as {labels[-1]} tweets:\n")
+    correct_non_populist = non_populist_examples.loc[non_populist_examples['Prediction'] == 1]
+    print_score_string = correct_non_populist.to_string(header=True, index=False, max_rows=amount_of_mistakes, max_cols=1)
+    f.write(print_score_string)
+    f.write('\n\n')
+
+
 def classifier(data_set,
                target_label,
                min_frequency,
-               max_frequency,
                iterations,
                feature_dict,
                stopwords,
@@ -168,21 +182,13 @@ def classifier(data_set,
     """
     # Import the data
     tweets_train, labels_train, tweets_test, labels_test = data_processing(data_set, target_label, dev=dev)
-
-    #assert len(tweets_train) == 21673, "Length of training dataset is incorrect"
-    #assert len(labels_train) == 21673, "Length of training labels is incorrect"
-    #if dev == False:
-    #    assert len(tweets_test) == 4632, "Length of testing dataset is incorrect"
-    #    assert len(labels_test) == 4632, "Length of testing labels is incorrect" 
     
     # Get TF-IDF vectors
     if feature_dict['tf-idf'] == True:
         train_tfidf_vectors, test_tfidf_vectors, vec = get_tfidf(tweets_train, tweets_test, min_frequency, stopwords)
-        print("Length of train_tfidf_vectors", len(train_tfidf_vectors))
-        print("Length of test_tfidf_vectors", len(test_tfidf_vectors))
 
     print("Getting training features")
-    features_train = get_features(tweets_train,  feature_dict)
+    features_train = get_features(tweets_train, feature_dict)
     features_test = get_features(tweets_test, feature_dict)
 
     print("Vectorizing features")
@@ -190,8 +196,6 @@ def classifier(data_set,
     if feature_dict['tf-idf'] == False:
         vec, features_vector_train = create_vectorizer(features_train)
         features_vector_test = vec.transform(features_test)
-
-        print("Vectors length: ", features_vector_train.shape, features_vector_test.shape)
 
     print("Making labels numerical")
     # Make labels numerical
@@ -213,7 +217,7 @@ def classifier(data_set,
     
     # Get statistics
     if feature_dict['tf-idf'] == True:
-        a, n, p = dataframe_coefficients(trained_svm, vec, data_set, outfile, top_features=10)
+        a, n, p = dataframe_coefficients(trained_svm, vec, data_set, outfile, label_encoder, top_features=10)
 
     # Test the model
     print("Testing the model")

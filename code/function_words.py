@@ -73,7 +73,3 @@ def get_function_words(wanted_types=['articles', 'prepositions', 'quantifiers', 
         final_list = final_list + function_words[type]
 
     return(final_list)
-
-tweets = [' Wanneer het niet mogelijk is om met de auto naar de teststraat te komen, kun je samen met een telefonisch medewerker de beste optie om je te laten testen bespreken. ^CM', 'De tweede stap in het versoepelen van de coronamaatregelen zetten we vandaag. Alleen als iedereen zich aan de maatregelen houdt, zetten we samen een stap vooruit.\n\nActuele informatie ⤵️\n\n', 'De tweede stap in het versoepelen van de coronamaatregelen zetten we vandaag. \n\nAlleen als iedereen zich aan de maatregelen houdt, zetten we samen een stap vooruit.\n\nActuele informatie ⤵️\n\n\nAlleenSamen ']
-function_words = get_function_words(wanted_types=['pronouns'])
-print(function_words)

@@ -1,0 +1,642 @@
+READABILITY
+
+
+
+
+
+EXPERIMENT 1: all features
+--------------ERROR ANALYSIS---------------
+MISTAKES:
+>Class 0 tweets predicted as class 1 tweets:
+Empty DataFrame
+Columns: [Tweet, Gold label, Prediction]
+Index: []
+
+>Class 1 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                                                               Tweet  ...
+          @USER De PARTY-fractie heeft het verzoek bij het CPB en SCP neergelegd om naar de mogelijke brede effecten van verschillende vormen van een basisinkomen te kijken. Voor PARTY is het altijd belangrijk dat het wel aantrekkelijk is om vanuit een uitkering te gaan werken. ^Liz #HASHTAG  ...
+@USER @USER Klopt, er zijn veel vrouwen die op hun manier een top vrouw zijn. Met functies aan de top oa worden de Raad van commissarissen en de Raad van bestuur van beursgenoteerde bedrijven bedoeld. Uit onderzoek blijkt dat diversiteit bijdraagt aan de kwaliteit van de besluitvorming. ^Liz  ...
+                        @USER @USER Er is sprake van een verre mate van lockdown. Het is alleen niet zwart of wit. Het is heel veel tinten grijs. Je ziet dat veel mensen het ook goed doen. Maar net als in een voetbalstadion: een paar hooligans kunnen het voor de rest verpesten. ^Liz #HASHTAG  ...
+                                                                                                                                                “De politiek moet de deeltjesversneller zijn van het politieke debat. Het is aan ons om discussies los te maken.”- @USER tijdens het #HASHTAG (LINK)  ...
+                                                                                                                                         @USER Voor aardigheid staan we sowieso! 😉 Als je meer wil weten over onze standpunten kun je ons altijd een DM sturen, dan vertellen we je graag meer! ^Kim  ...
+                                                                                                                                                                                                                                                                                                 ...  ...
+                                                                                                                         @USER Het gaat om tijdelijke arbeidsmigratie van max vier jaar. We maken afspraken met landen van herkomst over terugkeer. Het hele plan lees je hier: (LINK) #HASHTAG ^Tom  ...
+                                                                                                                                                                                                                                                    @USER @USER Wij zijn vóór, Paul 😉💚 ^Liz #HASHTAG  ...
+                                                                         Hoe vrij zijn we als je uren in de file staat en tegelijkertijd het milieu vervuilt?🌳 Een slimme kilometer- en spitsheffing zorgt voor minder uitstoot, minder files en voor schone lucht. Lees onze plannen 👇(LINK) (LINK)  ...
+                                                                                                                                                                                                                                                         @USER @USER Top! Goed bezig 👏 #HASHTAG ^Kim  ...
+                                                                                                                                                                                                                             Lees de brief van @USER aan iedereen in Nederland hier: #HASHTAG (LINK)  ...
+
+CORRECT:
+>Class 0 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                     Tweet  ...
+                                                                                                                                      Tijd voor actie! ✊Kom naar het congres van PARTY en @USER op zaterdag 4 februari. Meld je hier aan: (LINK) ☁️ (LINK)  ...
+                                                                                                  @USER @USER @USER @USER @USER @USER App ons vooral als je vragen hebt over ons programma! (Of als je wilt dat we je overtuigen natuurlijk 😉)+31613232050  ...
+Een mooie erkenning van alle onterecht beschuldigde ouders en van iedereen die knokt voor rechtvaardigheid.Super trots op onze @USER die samen met Pieter Omtzigt de prijs in ontvangst nam voor de Politieke Prestatie van 2019!💪#HASHTAG #HASHTAG (LINK)  ...
+                                                                                                                                                                              @USER @USER @USER Hier heb je een link naar onze provinciale plannen: (LINK)  ...
+                                                                                                                                                                                                                  Terugkijken: (LINK) (vanaf 24:50) (LINK)  ...
+                                                                                                                                                                                                                                                       ...  ...
+         Pakketbezorgers moeten vaak tussen de 200 en 300 pakketjes per dag bezorgen. Dat zijn er nóg meer op dagen als #HASHTAG En dat allemaal voor een laag loon en onder slechte werkomstandigheden.Dat moet écht anders. De oproep van @USER ⤵️(LINK)  ...
+                                                                                                                                                               Zet de volgende stap. Meld je aan voor de #HASHTAG op 10 maart in Amsterdam. 👉(LINK) (LINK)  ...
+                                                                                                            @USER Sorry, dat woord is in dit licht inderdaad stom gekozen. Wat ik bedoelde: er is iets misgegaan bij het stemmen, en dat wordt rechtgezet.  ...
+                                                                                                                                                                                                  Straks om 9.30 uur 👉 @USER bij @USER Kijk je mee? (LINK)  ...
+           De traditionele partijen - die het in Europa al jaren voor het zeggen hebben - laten het liefst alles bij het oude. Hoog tijd dat we dat gaan veranderen.Wat zijn we trots dat we @USER mogen voordragen als topkandidaat voor de @USER 💪(LINK)  ...
+
+>Class 1 tweets predicted as class 1 tweets:
+Empty DataFrame
+Columns: [Tweet, Gold label, Prediction]
+Index: []
+
+
+--------------EVALUATION---------------
+
+Classification report: 
+['left' 'middle' 'right']
+              precision    recall  f1-score   support
+
+           0  0.4421109 0.4667425 0.4540929      1759
+           1  0.0000000 0.0000000 0.0000000       827
+           2  0.4745946 0.6436950 0.5463597      2046
+
+    accuracy                      0.4615717      4632
+   macro avg  0.3055685 0.3701458 0.3334842      4632
+weighted avg  0.3775245 0.4615717 0.4137740      4632
+
+Confusion matrix: 
+['left' 'middle' 'right']
+[[ 821    0  938]
+ [ 307    0  520]
+ [ 729    0 1317]]
+
+Sentence check:
+['left' 'middle' 'right']
+Instance, true label, predicted label
+130. ".@USER wil álle Nederlandse soevereiniteit weggeven. Maar over #HASHTAG hebben ze onzinverhalen over "buitenlandse inmenging".@USER wil weten: Hoe noemt @USER het als een ambassadeur een partijleider als dank voor steun aan #HASHTAG een penthouse in Scheveningen geeft? (LINK)": 2, 2
+260. ""De problemen op de ‘woningmarkt’, de problemen qua volkshuisvesting, zijn nog nooit zo groot geweest. Er is een woonkloof: tussen mensen die op tijd een huis konden kopen of huren, en mensen die dat gewoon niet meer lukt."Kamerlid @USER over de #HASHTAG (LINK)": 0, 0
+390. "Luistertip! 📻Straks is @USER bij @USER over het Zorgbuurthuis.Luister vanaf 12.05 uur mee via @USER Zorgbuurthuis in Oss is opgeleverd! Lees hier meer 👇(LINK) (LINK)": 0, 2
+520. "Waarom voelen we ons steeds vaker niet meer veilig? We bespreken het om 17:00 bij #HASHTAG Live met oud-politieprominent Klaas Wilting.Ook in de uitzending: ondernemer Johan Habets over de evenementenbranche en Statenlid Michiel Fiscalini over kernenergie in Utrecht. Tot zo! (LINK)": 2, 2
+650. "Vandaag zijn @USER @USER &amp; @USER exact één jaar Tweede Kamerlid voor de PARTY! Vergeet ze niet te volgen om te zien hoeveel werk ze verzetten🙂 (LINK)": 0, 0
+780. "PARTY stevig op 24 zetels! #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 2
+910. "Vandaag is Aswoensdag. Dit is een katholieke traditie die de start is van de Vastentijd en voorbereiding op het Paasfeest.Iedereen die deze tijd van bezinning ingaat een gezegende tijd gewenst! #HASHTAG (LINK)": 0, 2
+1040. "Wilders: “Wat een gênante vertoning op het podium net”@USER #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+1170. "We zijn live met de online talkshow #HASHTAG Met kandidaat-Kamerleden, wetenschappers en activisten. 💚Kijk mee via (LINK)": 0, 2
+1300. "Al meer dan 10 DUIZEND mensen openden een gesprek met onze Zweeflijn. 📲😱Heb je een vraag over onze plannen? Tot en met vanavond zit ons team van vrijwilligers, beleidsmedewerkers en Kamerleden klaar om je te antwoorden!🔥 (LINK) 🔥": 0, 0
+1430. "Het voorstel om giften aan partijen te maximeren op €100.000, is aangenomen! Een belangrijke stap waarmee we de macht van geld kunnen inperken. Want in een democratie telt iedere stem even zwaar. 🗳 (LINK)": 0, 2
+1560. "Belachelijk besluit. En wat een selectieve verontwaardiging over de ‘rechtsorde’. Ze zijn wel eerder met zijn allen naar Iran en Saoedi-Arabië geweest waar ze vrouwen stenigen en afvalligen onthoofden. Maar dat was geen probleem.": 2, 2
+1690. "#HASHTAG wil investeren in snelle dataverbindingen voor heel NL zodat wij het snelste internet ter wereld krijgen. Veel belangrijker voor ons #HASHTAG dan het afschaffen van de #HASHTAG van Rutte. (LINK)": 2, 2
+1820. "De oorlog in Oekraïne heeft grote gevolgen voor mensen. Daarom maken we nóg ambitieuzere afspraken.▶️ We halen de NAVO-norm in 2024.▶️ Het minimumloon gaat sneller omhoog.▶️ Vervuilende industrie en grote bedrijven betalen meer belasting.(LINK)": 1, 2
+1950. ""De situatie op Griekse eilanden is dramatisch en de Europese Unie en Griekenland moeten nu in actie komen."Oproep van @USER (LINK)": 0, 2
+2080. "Het zijn leugenaars.Geloof ze nooit.#HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+2210. "Meer weten over hoe we lokaal de markt uit de zorg halen? Kijk hoe we dat doen in #HASHTAG": 0, 0
+2340. "Dus PARTY, de PARTY, de PARTY en PARTY gaan demonstreren tegen de PARTY. Wat een armoede. Vier partijen die allemaal op fors verlies staan in de peilingen. Samen tegen de enige echte volkspartij die op winst staat. Bijna zielig.": 2, 2
+2470. "Hoe gezond je bent hangt niet alleen af van het lichaam. Je opleiding, werk en sociale omstandigheden hebben daar veel invloed op. Daarom willen we gezondheid een prominente plek geven in onze samenleving. Zo kunnen we voorkomen dat mensen ziek worden.(LINK)": 1, 2
+2600. "@USER @USER Wellicht heb je het gemist, maar we zijn in maart naar de stembus gegaan. PARTY kreeg meer dan 1.5 miljoen stemmen. ^Tom": 1, 2
+---------------------------------------
+
+
+EXPERIMENT 2: flesch-kincaid removed
+--------------ERROR ANALYSIS---------------
+MISTAKES:
+>Class 0 tweets predicted as class 1 tweets:
+Empty DataFrame
+Columns: [Tweet, Gold label, Prediction]
+Index: []
+
+>Class 1 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                        Tweet  ...
+                                                                                                                                                                                                             Alles over stemmen vanuit het buitenland 👇(LINK)  ...
+                                                                                                         “De politiek moet de deeltjesversneller zijn van het politieke debat. Het is aan ons om discussies los te maken.”- @USER tijdens het #HASHTAG (LINK)  ...
+                                                                                                                                         @USER @USER @USER Mochten wij een van die partijen zijn, kijk dan vooral op onze partijdige kieswijzer (LINK) 😉 ^Jay  ...
+Door de coronacrisis zijn mensen steeds vaker eenzaam. Of hebben ze last van andere mentale klachten.Iedereen die hiermee kampt verdient de juiste hulp vanaf het eerste moment. Lees meer over hoe wij mensen met psychische klachten willen helpen. 👇(LINK)  ...
+                                                                                                                                         We zijn er klaar voor. Volg vanaf 14.00 uur het #HASHTAG Live vanuit de studio in Halfweg.Kijk mee via (LINK) (LINK)  ...
+                                                                                                                                                                                                                                                          ...  ...
+                                               Produceer jij straks onze video's? En schrijf je teksten voor op onze website?Ons Voorlichtingsteam is op zoek naar stagiairs! Je hebt nog 4⃣ dagen om te solliciteren.Voorlichting 👉 (LINK) 👉 (LINK) #HASHTAG  ...
+                                                                                                                                                                                                             @USER @USER Wij zijn vóór, Paul 😉💚 ^Liz #HASHTAG  ...
+                                  Hoe vrij zijn we als je uren in de file staat en tegelijkertijd het milieu vervuilt?🌳 Een slimme kilometer- en spitsheffing zorgt voor minder uitstoot, minder files en voor schone lucht. Lees onze plannen 👇(LINK) (LINK)  ...
+                                                                                                                                                                                                        @USER Sinds wanneer zitten we samen op judo Rob? ^Ivo  ...
+                                                                                                                                                                                      Lees de brief van @USER aan iedereen in Nederland hier: #HASHTAG (LINK)  ...
+
+CORRECT:
+>Class 0 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                     Tweet  ...
+                                                                                                  @USER @USER @USER @USER @USER @USER App ons vooral als je vragen hebt over ons programma! (Of als je wilt dat we je overtuigen natuurlijk 😉)+31613232050  ...
+Een mooie erkenning van alle onterecht beschuldigde ouders en van iedereen die knokt voor rechtvaardigheid.Super trots op onze @USER die samen met Pieter Omtzigt de prijs in ontvangst nam voor de Politieke Prestatie van 2019!💪#HASHTAG #HASHTAG (LINK)  ...
+                                                                                                                                                                              @USER @USER @USER Hier heb je een link naar onze provinciale plannen: (LINK)  ...
+                                                                                                                                                                                                                  Terugkijken: (LINK) (vanaf 24:50) (LINK)  ...
+                       Corona blues😩De #HASHTAG begint steeds meer zijn tol te eisen van werknemers, aldus het @USER @USER vertelt hoe hij omgaat met de coronacrisis. Kom jij zelf in de knel met je werk of thuissituatie? Laat het ons dan weten👇(LINK)  ...
+                                                                                                                                                                                                                                                       ...  ...
+                                           Kijktip! 🍅Vanavond gaan PARTY-Kamerlid @USER  @USER van Burgerinitiatief Ons Geld en @USER van @USER in gesprek over de onzichtbare strijd over de toekomst van ons geld. 💰Kijk om 19.30 uur mee 👉(LINK) (LINK)  ...
+                         We mogen #HASHTAG en vertalers niet overlaten aan de grillen van de vrije markt. De plannen van dit kabinet brengen opnieuw de rechtsstaat in gevaar.Lees hier de opinie van PARTY-Kamerlid Michiel van Nispen.👇🍅 (LINK) 🍅 (LINK)  ...
+         Pakketbezorgers moeten vaak tussen de 200 en 300 pakketjes per dag bezorgen. Dat zijn er nóg meer op dagen als #HASHTAG En dat allemaal voor een laag loon en onder slechte werkomstandigheden.Dat moet écht anders. De oproep van @USER ⤵️(LINK)  ...
+           De traditionele partijen - die het in Europa al jaren voor het zeggen hebben - laten het liefst alles bij het oude. Hoog tijd dat we dat gaan veranderen.Wat zijn we trots dat we @USER mogen voordragen als topkandidaat voor de @USER 💪(LINK)  ...
+                                                                                                                                                                                               @USER @USER @USER @USER Top dat jullie erbij zijn 💪 ^RubenR  ...
+
+>Class 1 tweets predicted as class 1 tweets:
+Empty DataFrame
+Columns: [Tweet, Gold label, Prediction]
+Index: []
+
+
+--------------EVALUATION---------------
+
+Classification report: 
+['left' 'middle' 'right']
+              precision    recall  f1-score   support
+
+           0  0.4516317 0.4405912 0.4460432      1759
+           1  0.0000000 0.0000000 0.0000000       827
+           2  0.4650206 0.6627566 0.5465538      2046
+
+    accuracy                      0.4600604      4632
+   macro avg  0.3055508 0.3677826 0.3308657      4632
+weighted avg  0.3769111 0.4600604 0.4108029      4632
+
+Confusion matrix: 
+['left' 'middle' 'right']
+[[ 775    0  984]
+ [ 251    0  576]
+ [ 690    0 1356]]
+
+Sentence check:
+['left' 'middle' 'right']
+Instance, true label, predicted label
+130. ".@USER wil álle Nederlandse soevereiniteit weggeven. Maar over #HASHTAG hebben ze onzinverhalen over "buitenlandse inmenging".@USER wil weten: Hoe noemt @USER het als een ambassadeur een partijleider als dank voor steun aan #HASHTAG een penthouse in Scheveningen geeft? (LINK)": 2, 2
+260. ""De problemen op de ‘woningmarkt’, de problemen qua volkshuisvesting, zijn nog nooit zo groot geweest. Er is een woonkloof: tussen mensen die op tijd een huis konden kopen of huren, en mensen die dat gewoon niet meer lukt."Kamerlid @USER over de #HASHTAG (LINK)": 0, 0
+390. "Luistertip! 📻Straks is @USER bij @USER over het Zorgbuurthuis.Luister vanaf 12.05 uur mee via @USER Zorgbuurthuis in Oss is opgeleverd! Lees hier meer 👇(LINK) (LINK)": 0, 2
+520. "Waarom voelen we ons steeds vaker niet meer veilig? We bespreken het om 17:00 bij #HASHTAG Live met oud-politieprominent Klaas Wilting.Ook in de uitzending: ondernemer Johan Habets over de evenementenbranche en Statenlid Michiel Fiscalini over kernenergie in Utrecht. Tot zo! (LINK)": 2, 2
+650. "Vandaag zijn @USER @USER &amp; @USER exact één jaar Tweede Kamerlid voor de PARTY! Vergeet ze niet te volgen om te zien hoeveel werk ze verzetten🙂 (LINK)": 0, 0
+780. "PARTY stevig op 24 zetels! #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 2
+910. "Vandaag is Aswoensdag. Dit is een katholieke traditie die de start is van de Vastentijd en voorbereiding op het Paasfeest.Iedereen die deze tijd van bezinning ingaat een gezegende tijd gewenst! #HASHTAG (LINK)": 0, 2
+1040. "Wilders: “Wat een gênante vertoning op het podium net”@USER #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+1170. "We zijn live met de online talkshow #HASHTAG Met kandidaat-Kamerleden, wetenschappers en activisten. 💚Kijk mee via (LINK)": 0, 2
+1300. "Al meer dan 10 DUIZEND mensen openden een gesprek met onze Zweeflijn. 📲😱Heb je een vraag over onze plannen? Tot en met vanavond zit ons team van vrijwilligers, beleidsmedewerkers en Kamerleden klaar om je te antwoorden!🔥 (LINK) 🔥": 0, 2
+1430. "Het voorstel om giften aan partijen te maximeren op €100.000, is aangenomen! Een belangrijke stap waarmee we de macht van geld kunnen inperken. Want in een democratie telt iedere stem even zwaar. 🗳 (LINK)": 0, 2
+1560. "Belachelijk besluit. En wat een selectieve verontwaardiging over de ‘rechtsorde’. Ze zijn wel eerder met zijn allen naar Iran en Saoedi-Arabië geweest waar ze vrouwen stenigen en afvalligen onthoofden. Maar dat was geen probleem.": 2, 2
+1690. "#HASHTAG wil investeren in snelle dataverbindingen voor heel NL zodat wij het snelste internet ter wereld krijgen. Veel belangrijker voor ons #HASHTAG dan het afschaffen van de #HASHTAG van Rutte. (LINK)": 2, 2
+1820. "De oorlog in Oekraïne heeft grote gevolgen voor mensen. Daarom maken we nóg ambitieuzere afspraken.▶️ We halen de NAVO-norm in 2024.▶️ Het minimumloon gaat sneller omhoog.▶️ Vervuilende industrie en grote bedrijven betalen meer belasting.(LINK)": 1, 2
+1950. ""De situatie op Griekse eilanden is dramatisch en de Europese Unie en Griekenland moeten nu in actie komen."Oproep van @USER (LINK)": 0, 2
+2080. "Het zijn leugenaars.Geloof ze nooit.#HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+2210. "Meer weten over hoe we lokaal de markt uit de zorg halen? Kijk hoe we dat doen in #HASHTAG": 0, 0
+2340. "Dus PARTY, de PARTY, de PARTY en PARTY gaan demonstreren tegen de PARTY. Wat een armoede. Vier partijen die allemaal op fors verlies staan in de peilingen. Samen tegen de enige echte volkspartij die op winst staat. Bijna zielig.": 2, 2
+2470. "Hoe gezond je bent hangt niet alleen af van het lichaam. Je opleiding, werk en sociale omstandigheden hebben daar veel invloed op. Daarom willen we gezondheid een prominente plek geven in onze samenleving. Zo kunnen we voorkomen dat mensen ziek worden.(LINK)": 1, 2
+2600. "@USER @USER Wellicht heb je het gemist, maar we zijn in maart naar de stembus gegaan. PARTY kreeg meer dan 1.5 miljoen stemmen. ^Tom": 1, 0
+---------------------------------------
+
+
+EXPERIMENT 3: smog removed
+--------------ERROR ANALYSIS---------------
+MISTAKES:
+>Class 0 tweets predicted as class 1 tweets:
+Empty DataFrame
+Columns: [Tweet, Gold label, Prediction]
+Index: []
+
+>Class 1 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                                                               Tweet  ...
+          @USER De PARTY-fractie heeft het verzoek bij het CPB en SCP neergelegd om naar de mogelijke brede effecten van verschillende vormen van een basisinkomen te kijken. Voor PARTY is het altijd belangrijk dat het wel aantrekkelijk is om vanuit een uitkering te gaan werken. ^Liz #HASHTAG  ...
+@USER @USER Klopt, er zijn veel vrouwen die op hun manier een top vrouw zijn. Met functies aan de top oa worden de Raad van commissarissen en de Raad van bestuur van beursgenoteerde bedrijven bedoeld. Uit onderzoek blijkt dat diversiteit bijdraagt aan de kwaliteit van de besluitvorming. ^Liz  ...
+                                                                                                                                                “De politiek moet de deeltjesversneller zijn van het politieke debat. Het is aan ons om discussies los te maken.”- @USER tijdens het #HASHTAG (LINK)  ...
+                                                                                                                                                                                @USER @USER @USER Mochten wij een van die partijen zijn, kijk dan vooral op onze partijdige kieswijzer (LINK) 😉 ^Jay  ...
+                                                                                                                                                                                                            @USER Fijn dat je ook keek Ingrid! En hopelijk tot snel in levende lijve 💚 #HASHTAG ^Tom  ...
+                                                                                                                                                                                                                                                                                                 ...  ...
+                                                                         Hoe vrij zijn we als je uren in de file staat en tegelijkertijd het milieu vervuilt?🌳 Een slimme kilometer- en spitsheffing zorgt voor minder uitstoot, minder files en voor schone lucht. Lees onze plannen 👇(LINK) (LINK)  ...
+                                                                                                                                                                                                                                               @USER Sinds wanneer zitten we samen op judo Rob? ^Ivo  ...
+                                                                                                                                                                                                                                            @USER @USER @USER @USER Succes vandaag! 👏👏 ^Kim #HASHTAG  ...
+                                                                                                                                                                                                                                                         @USER @USER Top! Goed bezig 👏 #HASHTAG ^Kim  ...
+                                                                                                                                                                                                                             Lees de brief van @USER aan iedereen in Nederland hier: #HASHTAG (LINK)  ...
+
+CORRECT:
+>Class 0 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                     Tweet  ...
+                                                                                                                                      Tijd voor actie! ✊Kom naar het congres van PARTY en @USER op zaterdag 4 februari. Meld je hier aan: (LINK) ☁️ (LINK)  ...
+                                                                                                  @USER @USER @USER @USER @USER @USER App ons vooral als je vragen hebt over ons programma! (Of als je wilt dat we je overtuigen natuurlijk 😉)+31613232050  ...
+Een mooie erkenning van alle onterecht beschuldigde ouders en van iedereen die knokt voor rechtvaardigheid.Super trots op onze @USER die samen met Pieter Omtzigt de prijs in ontvangst nam voor de Politieke Prestatie van 2019!💪#HASHTAG #HASHTAG (LINK)  ...
+                                                                                                                                                                              @USER @USER @USER Hier heb je een link naar onze provinciale plannen: (LINK)  ...
+                                                                                                                                                                                                                  Terugkijken: (LINK) (vanaf 24:50) (LINK)  ...
+                                                                                                                                                                                                                                                       ...  ...
+         Pakketbezorgers moeten vaak tussen de 200 en 300 pakketjes per dag bezorgen. Dat zijn er nóg meer op dagen als #HASHTAG En dat allemaal voor een laag loon en onder slechte werkomstandigheden.Dat moet écht anders. De oproep van @USER ⤵️(LINK)  ...
+                                                                                                            @USER Sorry, dat woord is in dit licht inderdaad stom gekozen. Wat ik bedoelde: er is iets misgegaan bij het stemmen, en dat wordt rechtgezet.  ...
+                                                                                                                                                                                                  Straks om 9.30 uur 👉 @USER bij @USER Kijk je mee? (LINK)  ...
+           De traditionele partijen - die het in Europa al jaren voor het zeggen hebben - laten het liefst alles bij het oude. Hoog tijd dat we dat gaan veranderen.Wat zijn we trots dat we @USER mogen voordragen als topkandidaat voor de @USER 💪(LINK)  ...
+                                                                                                                                                                                               @USER @USER @USER @USER Top dat jullie erbij zijn 💪 ^RubenR  ...
+
+>Class 1 tweets predicted as class 1 tweets:
+Empty DataFrame
+Columns: [Tweet, Gold label, Prediction]
+Index: []
+
+
+--------------EVALUATION---------------
+
+Classification report: 
+['left' 'middle' 'right']
+              precision    recall  f1-score   support
+
+           0  0.4442001 0.4593519 0.4516490      1759
+           1  0.0000000 0.0000000 0.0000000       827
+           2  0.4788482 0.6583578 0.5544351      2046
+
+    accuracy                      0.4652418      4632
+   macro avg  0.3076828 0.3725699 0.3353613      4632
+weighted avg  0.3801968 0.4652418 0.4164129      4632
+
+Confusion matrix: 
+['left' 'middle' 'right']
+[[ 808    0  951]
+ [ 312    0  515]
+ [ 699    0 1347]]
+
+Sentence check:
+['left' 'middle' 'right']
+Instance, true label, predicted label
+130. ".@USER wil álle Nederlandse soevereiniteit weggeven. Maar over #HASHTAG hebben ze onzinverhalen over "buitenlandse inmenging".@USER wil weten: Hoe noemt @USER het als een ambassadeur een partijleider als dank voor steun aan #HASHTAG een penthouse in Scheveningen geeft? (LINK)": 2, 2
+260. ""De problemen op de ‘woningmarkt’, de problemen qua volkshuisvesting, zijn nog nooit zo groot geweest. Er is een woonkloof: tussen mensen die op tijd een huis konden kopen of huren, en mensen die dat gewoon niet meer lukt."Kamerlid @USER over de #HASHTAG (LINK)": 0, 0
+390. "Luistertip! 📻Straks is @USER bij @USER over het Zorgbuurthuis.Luister vanaf 12.05 uur mee via @USER Zorgbuurthuis in Oss is opgeleverd! Lees hier meer 👇(LINK) (LINK)": 0, 2
+520. "Waarom voelen we ons steeds vaker niet meer veilig? We bespreken het om 17:00 bij #HASHTAG Live met oud-politieprominent Klaas Wilting.Ook in de uitzending: ondernemer Johan Habets over de evenementenbranche en Statenlid Michiel Fiscalini over kernenergie in Utrecht. Tot zo! (LINK)": 2, 2
+650. "Vandaag zijn @USER @USER &amp; @USER exact één jaar Tweede Kamerlid voor de PARTY! Vergeet ze niet te volgen om te zien hoeveel werk ze verzetten🙂 (LINK)": 0, 0
+780. "PARTY stevig op 24 zetels! #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+910. "Vandaag is Aswoensdag. Dit is een katholieke traditie die de start is van de Vastentijd en voorbereiding op het Paasfeest.Iedereen die deze tijd van bezinning ingaat een gezegende tijd gewenst! #HASHTAG (LINK)": 0, 2
+1040. "Wilders: “Wat een gênante vertoning op het podium net”@USER #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+1170. "We zijn live met de online talkshow #HASHTAG Met kandidaat-Kamerleden, wetenschappers en activisten. 💚Kijk mee via (LINK)": 0, 2
+1300. "Al meer dan 10 DUIZEND mensen openden een gesprek met onze Zweeflijn. 📲😱Heb je een vraag over onze plannen? Tot en met vanavond zit ons team van vrijwilligers, beleidsmedewerkers en Kamerleden klaar om je te antwoorden!🔥 (LINK) 🔥": 0, 0
+1430. "Het voorstel om giften aan partijen te maximeren op €100.000, is aangenomen! Een belangrijke stap waarmee we de macht van geld kunnen inperken. Want in een democratie telt iedere stem even zwaar. 🗳 (LINK)": 0, 2
+1560. "Belachelijk besluit. En wat een selectieve verontwaardiging over de ‘rechtsorde’. Ze zijn wel eerder met zijn allen naar Iran en Saoedi-Arabië geweest waar ze vrouwen stenigen en afvalligen onthoofden. Maar dat was geen probleem.": 2, 2
+1690. "#HASHTAG wil investeren in snelle dataverbindingen voor heel NL zodat wij het snelste internet ter wereld krijgen. Veel belangrijker voor ons #HASHTAG dan het afschaffen van de #HASHTAG van Rutte. (LINK)": 2, 2
+1820. "De oorlog in Oekraïne heeft grote gevolgen voor mensen. Daarom maken we nóg ambitieuzere afspraken.▶️ We halen de NAVO-norm in 2024.▶️ Het minimumloon gaat sneller omhoog.▶️ Vervuilende industrie en grote bedrijven betalen meer belasting.(LINK)": 1, 2
+1950. ""De situatie op Griekse eilanden is dramatisch en de Europese Unie en Griekenland moeten nu in actie komen."Oproep van @USER (LINK)": 0, 2
+2080. "Het zijn leugenaars.Geloof ze nooit.#HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 2
+2210. "Meer weten over hoe we lokaal de markt uit de zorg halen? Kijk hoe we dat doen in #HASHTAG": 0, 0
+2340. "Dus PARTY, de PARTY, de PARTY en PARTY gaan demonstreren tegen de PARTY. Wat een armoede. Vier partijen die allemaal op fors verlies staan in de peilingen. Samen tegen de enige echte volkspartij die op winst staat. Bijna zielig.": 2, 2
+2470. "Hoe gezond je bent hangt niet alleen af van het lichaam. Je opleiding, werk en sociale omstandigheden hebben daar veel invloed op. Daarom willen we gezondheid een prominente plek geven in onze samenleving. Zo kunnen we voorkomen dat mensen ziek worden.(LINK)": 1, 2
+2600. "@USER @USER Wellicht heb je het gemist, maar we zijn in maart naar de stembus gegaan. PARTY kreeg meer dan 1.5 miljoen stemmen. ^Tom": 1, 0
+---------------------------------------
+
+
+EXPERIMENT 4: word_amount removed
+--------------ERROR ANALYSIS---------------
+MISTAKES:
+>Class 0 tweets predicted as class 1 tweets:
+Empty DataFrame
+Columns: [Tweet, Gold label, Prediction]
+Index: []
+
+>Class 1 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                                                               Tweet  ...
+          @USER De PARTY-fractie heeft het verzoek bij het CPB en SCP neergelegd om naar de mogelijke brede effecten van verschillende vormen van een basisinkomen te kijken. Voor PARTY is het altijd belangrijk dat het wel aantrekkelijk is om vanuit een uitkering te gaan werken. ^Liz #HASHTAG  ...
+@USER @USER Klopt, er zijn veel vrouwen die op hun manier een top vrouw zijn. Met functies aan de top oa worden de Raad van commissarissen en de Raad van bestuur van beursgenoteerde bedrijven bedoeld. Uit onderzoek blijkt dat diversiteit bijdraagt aan de kwaliteit van de besluitvorming. ^Liz  ...
+                        @USER @USER Er is sprake van een verre mate van lockdown. Het is alleen niet zwart of wit. Het is heel veel tinten grijs. Je ziet dat veel mensen het ook goed doen. Maar net als in een voetbalstadion: een paar hooligans kunnen het voor de rest verpesten. ^Liz #HASHTAG  ...
+                                                                                                                                                “De politiek moet de deeltjesversneller zijn van het politieke debat. Het is aan ons om discussies los te maken.”- @USER tijdens het #HASHTAG (LINK)  ...
+                                                                                                                                         @USER Voor aardigheid staan we sowieso! 😉 Als je meer wil weten over onze standpunten kun je ons altijd een DM sturen, dan vertellen we je graag meer! ^Kim  ...
+                                                                                                                                                                                                                                                                                                 ...  ...
+                                                                                                                         @USER Het gaat om tijdelijke arbeidsmigratie van max vier jaar. We maken afspraken met landen van herkomst over terugkeer. Het hele plan lees je hier: (LINK) #HASHTAG ^Tom  ...
+                                                                                                                                                                                                                                                    @USER @USER Wij zijn vóór, Paul 😉💚 ^Liz #HASHTAG  ...
+                                                                         Hoe vrij zijn we als je uren in de file staat en tegelijkertijd het milieu vervuilt?🌳 Een slimme kilometer- en spitsheffing zorgt voor minder uitstoot, minder files en voor schone lucht. Lees onze plannen 👇(LINK) (LINK)  ...
+                                                                                                                                                                                                                                                         @USER @USER Top! Goed bezig 👏 #HASHTAG ^Kim  ...
+                                                                                                                                                                                                                             Lees de brief van @USER aan iedereen in Nederland hier: #HASHTAG (LINK)  ...
+
+CORRECT:
+>Class 0 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                     Tweet  ...
+                                                                                                                                      Tijd voor actie! ✊Kom naar het congres van PARTY en @USER op zaterdag 4 februari. Meld je hier aan: (LINK) ☁️ (LINK)  ...
+                                                                                                  @USER @USER @USER @USER @USER @USER App ons vooral als je vragen hebt over ons programma! (Of als je wilt dat we je overtuigen natuurlijk 😉)+31613232050  ...
+Een mooie erkenning van alle onterecht beschuldigde ouders en van iedereen die knokt voor rechtvaardigheid.Super trots op onze @USER die samen met Pieter Omtzigt de prijs in ontvangst nam voor de Politieke Prestatie van 2019!💪#HASHTAG #HASHTAG (LINK)  ...
+                                                                                                                                                                              @USER @USER @USER Hier heb je een link naar onze provinciale plannen: (LINK)  ...
+                                                                                                                                                                                                                  Terugkijken: (LINK) (vanaf 24:50) (LINK)  ...
+                                                                                                                                                                                                                                                       ...  ...
+         Pakketbezorgers moeten vaak tussen de 200 en 300 pakketjes per dag bezorgen. Dat zijn er nóg meer op dagen als #HASHTAG En dat allemaal voor een laag loon en onder slechte werkomstandigheden.Dat moet écht anders. De oproep van @USER ⤵️(LINK)  ...
+                                                                                                                                                               Zet de volgende stap. Meld je aan voor de #HASHTAG op 10 maart in Amsterdam. 👉(LINK) (LINK)  ...
+                                                                                                            @USER Sorry, dat woord is in dit licht inderdaad stom gekozen. Wat ik bedoelde: er is iets misgegaan bij het stemmen, en dat wordt rechtgezet.  ...
+                                                                                                                                                                                                  Straks om 9.30 uur 👉 @USER bij @USER Kijk je mee? (LINK)  ...
+           De traditionele partijen - die het in Europa al jaren voor het zeggen hebben - laten het liefst alles bij het oude. Hoog tijd dat we dat gaan veranderen.Wat zijn we trots dat we @USER mogen voordragen als topkandidaat voor de @USER 💪(LINK)  ...
+
+>Class 1 tweets predicted as class 1 tweets:
+Empty DataFrame
+Columns: [Tweet, Gold label, Prediction]
+Index: []
+
+
+--------------EVALUATION---------------
+
+Classification report: 
+['left' 'middle' 'right']
+              precision    recall  f1-score   support
+
+           0  0.4421109 0.4667425 0.4540929      1759
+           1  0.0000000 0.0000000 0.0000000       827
+           2  0.4745946 0.6436950 0.5463597      2046
+
+    accuracy                      0.4615717      4632
+   macro avg  0.3055685 0.3701458 0.3334842      4632
+weighted avg  0.3775245 0.4615717 0.4137740      4632
+
+Confusion matrix: 
+['left' 'middle' 'right']
+[[ 821    0  938]
+ [ 307    0  520]
+ [ 729    0 1317]]
+
+Sentence check:
+['left' 'middle' 'right']
+Instance, true label, predicted label
+130. ".@USER wil álle Nederlandse soevereiniteit weggeven. Maar over #HASHTAG hebben ze onzinverhalen over "buitenlandse inmenging".@USER wil weten: Hoe noemt @USER het als een ambassadeur een partijleider als dank voor steun aan #HASHTAG een penthouse in Scheveningen geeft? (LINK)": 2, 2
+260. ""De problemen op de ‘woningmarkt’, de problemen qua volkshuisvesting, zijn nog nooit zo groot geweest. Er is een woonkloof: tussen mensen die op tijd een huis konden kopen of huren, en mensen die dat gewoon niet meer lukt."Kamerlid @USER over de #HASHTAG (LINK)": 0, 0
+390. "Luistertip! 📻Straks is @USER bij @USER over het Zorgbuurthuis.Luister vanaf 12.05 uur mee via @USER Zorgbuurthuis in Oss is opgeleverd! Lees hier meer 👇(LINK) (LINK)": 0, 2
+520. "Waarom voelen we ons steeds vaker niet meer veilig? We bespreken het om 17:00 bij #HASHTAG Live met oud-politieprominent Klaas Wilting.Ook in de uitzending: ondernemer Johan Habets over de evenementenbranche en Statenlid Michiel Fiscalini over kernenergie in Utrecht. Tot zo! (LINK)": 2, 2
+650. "Vandaag zijn @USER @USER &amp; @USER exact één jaar Tweede Kamerlid voor de PARTY! Vergeet ze niet te volgen om te zien hoeveel werk ze verzetten🙂 (LINK)": 0, 0
+780. "PARTY stevig op 24 zetels! #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 2
+910. "Vandaag is Aswoensdag. Dit is een katholieke traditie die de start is van de Vastentijd en voorbereiding op het Paasfeest.Iedereen die deze tijd van bezinning ingaat een gezegende tijd gewenst! #HASHTAG (LINK)": 0, 2
+1040. "Wilders: “Wat een gênante vertoning op het podium net”@USER #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+1170. "We zijn live met de online talkshow #HASHTAG Met kandidaat-Kamerleden, wetenschappers en activisten. 💚Kijk mee via (LINK)": 0, 2
+1300. "Al meer dan 10 DUIZEND mensen openden een gesprek met onze Zweeflijn. 📲😱Heb je een vraag over onze plannen? Tot en met vanavond zit ons team van vrijwilligers, beleidsmedewerkers en Kamerleden klaar om je te antwoorden!🔥 (LINK) 🔥": 0, 0
+1430. "Het voorstel om giften aan partijen te maximeren op €100.000, is aangenomen! Een belangrijke stap waarmee we de macht van geld kunnen inperken. Want in een democratie telt iedere stem even zwaar. 🗳 (LINK)": 0, 2
+1560. "Belachelijk besluit. En wat een selectieve verontwaardiging over de ‘rechtsorde’. Ze zijn wel eerder met zijn allen naar Iran en Saoedi-Arabië geweest waar ze vrouwen stenigen en afvalligen onthoofden. Maar dat was geen probleem.": 2, 2
+1690. "#HASHTAG wil investeren in snelle dataverbindingen voor heel NL zodat wij het snelste internet ter wereld krijgen. Veel belangrijker voor ons #HASHTAG dan het afschaffen van de #HASHTAG van Rutte. (LINK)": 2, 2
+1820. "De oorlog in Oekraïne heeft grote gevolgen voor mensen. Daarom maken we nóg ambitieuzere afspraken.▶️ We halen de NAVO-norm in 2024.▶️ Het minimumloon gaat sneller omhoog.▶️ Vervuilende industrie en grote bedrijven betalen meer belasting.(LINK)": 1, 2
+1950. ""De situatie op Griekse eilanden is dramatisch en de Europese Unie en Griekenland moeten nu in actie komen."Oproep van @USER (LINK)": 0, 2
+2080. "Het zijn leugenaars.Geloof ze nooit.#HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+2210. "Meer weten over hoe we lokaal de markt uit de zorg halen? Kijk hoe we dat doen in #HASHTAG": 0, 0
+2340. "Dus PARTY, de PARTY, de PARTY en PARTY gaan demonstreren tegen de PARTY. Wat een armoede. Vier partijen die allemaal op fors verlies staan in de peilingen. Samen tegen de enige echte volkspartij die op winst staat. Bijna zielig.": 2, 2
+2470. "Hoe gezond je bent hangt niet alleen af van het lichaam. Je opleiding, werk en sociale omstandigheden hebben daar veel invloed op. Daarom willen we gezondheid een prominente plek geven in onze samenleving. Zo kunnen we voorkomen dat mensen ziek worden.(LINK)": 1, 2
+2600. "@USER @USER Wellicht heb je het gemist, maar we zijn in maart naar de stembus gegaan. PARTY kreeg meer dan 1.5 miljoen stemmen. ^Tom": 1, 2
+---------------------------------------
+
+
+EXPERIMENT 5: sentence_amount removed
+--------------ERROR ANALYSIS---------------
+MISTAKES:
+>Class 0 tweets predicted as class 1 tweets:
+                                                  Tweet  ...
+Stem 17 maart voor meer schone lucht. ☀️#HASHTAG (LINK)  ...
+                                @USER PARTY, GL en pvdd  ...
+           Om 19.00 zit @USER bij @USER #HASHTAG (LINK)  ...
+.@USER “De PARTY levert voor de regio.” #HASHTAG (LINK)  ...
+                          Hoe we dat gaan doen? 👇(LINK)  ...
+          🔴 Nu live de speech van @USER (LINK) #HASHTAG  ...
+                           Kijk je mee? 👉 (LINK) (LINK)  ...
+                 Meld je aan! ⤵️ #HASHTAG (LINK) (LINK)  ...
+                      "Goed shirt heb je aan!" 😏 (LINK)  ...
+
+>Class 1 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                                       Tweet  ...
+@USER @USER Er is sprake van een verre mate van lockdown. Het is alleen niet zwart of wit. Het is heel veel tinten grijs. Je ziet dat veel mensen het ook goed doen. Maar net als in een voetbalstadion: een paar hooligans kunnen het voor de rest verpesten. ^Liz #HASHTAG  ...
+                         @USER @USER Ons voorstel is kringlooplandbouw. Voor meer info (LINK) Ons kamerlid @USER was op de bijeenkomst op het Malieveld. Daar werd hem al snel het spreken onmogelijk gemaakt. Ook daarna is hij in gesprek gegaan met boeren. #HASHTAG ^Bas  ...
+                                                                                                                        “De politiek moet de deeltjesversneller zijn van het politieke debat. Het is aan ons om discussies los te maken.”- @USER tijdens het #HASHTAG (LINK)  ...
+                                                                                                                 @USER Voor aardigheid staan we sowieso! 😉 Als je meer wil weten over onze standpunten kun je ons altijd een DM sturen, dan vertellen we je graag meer! ^Kim  ...
+                                                                                                                                                        @USER @USER @USER Mochten wij een van die partijen zijn, kijk dan vooral op onze partijdige kieswijzer (LINK) 😉 ^Jay  ...
+                                                                                                                                                                                                                                                                         ...  ...
+                                                                                   Op 15 maart bepaal jij de koers in jouw provincie én de Eerste Kamer. Geef je samen met ons de toekomst een stem? Stem morgen op vooruitgang. Stop stilstand.Stem vooruit.#HASHTAG (LINK)  ...
+                                                                                                 @USER Het gaat om tijdelijke arbeidsmigratie van max vier jaar. We maken afspraken met landen van herkomst over terugkeer. Het hele plan lees je hier: (LINK) #HASHTAG ^Tom  ...
+                                                 Hoe vrij zijn we als je uren in de file staat en tegelijkertijd het milieu vervuilt?🌳 Een slimme kilometer- en spitsheffing zorgt voor minder uitstoot, minder files en voor schone lucht. Lees onze plannen 👇(LINK) (LINK)  ...
+        Juist in deze crisis is het tijd voor een nieuw begin. 📚 Waar onderwijs op 1 staat.🌍 We écht actie ondernemen voor het klimaat.🏡 We bouwen 1 miljoen nieuwe woningen.❤️ Er is geen plaats voor racisme en discriminatie. Benieuwd naar al onze plannen?(LINK) (LINK)  ...
+                                                                                                                                                                                                     Lees de brief van @USER aan iedereen in Nederland hier: #HASHTAG (LINK)  ...
+
+CORRECT:
+>Class 0 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                     Tweet  ...
+                                                         @USER @USER Beste Dientje, hopelijk wordt het PARTY! Als je nog twijfelt hebben wij precies wat jij nodig hebt: de Twijfellijn! 😀. Stel je vragen op (LINK) en hopelijk kunnen wij je overtuigen!  ...
+                                                                                                                                      Tijd voor actie! ✊Kom naar het congres van PARTY en @USER op zaterdag 4 februari. Meld je hier aan: (LINK) ☁️ (LINK)  ...
+                                                                                                  @USER @USER @USER @USER @USER @USER App ons vooral als je vragen hebt over ons programma! (Of als je wilt dat we je overtuigen natuurlijk 😉)+31613232050  ...
+Een mooie erkenning van alle onterecht beschuldigde ouders en van iedereen die knokt voor rechtvaardigheid.Super trots op onze @USER die samen met Pieter Omtzigt de prijs in ontvangst nam voor de Politieke Prestatie van 2019!💪#HASHTAG #HASHTAG (LINK)  ...
+                                                                                                                                                                              @USER @USER @USER Hier heb je een link naar onze provinciale plannen: (LINK)  ...
+                                                                                                                                                                                                                                                       ...  ...
+         Pakketbezorgers moeten vaak tussen de 200 en 300 pakketjes per dag bezorgen. Dat zijn er nóg meer op dagen als #HASHTAG En dat allemaal voor een laag loon en onder slechte werkomstandigheden.Dat moet écht anders. De oproep van @USER ⤵️(LINK)  ...
+                                                                                                                                                               Zet de volgende stap. Meld je aan voor de #HASHTAG op 10 maart in Amsterdam. 👉(LINK) (LINK)  ...
+                                                                                                            @USER Sorry, dat woord is in dit licht inderdaad stom gekozen. Wat ik bedoelde: er is iets misgegaan bij het stemmen, en dat wordt rechtgezet.  ...
+                                                                                              "Voor alle medewerkers in de zorg" 💐Doe je ook mee? Wie bedank jij vanaf je bank? Post je video en tag ons. Wij delen jouw lieve gebaar! 💞 #HASHTAG #HASHTAG  ...
+           De traditionele partijen - die het in Europa al jaren voor het zeggen hebben - laten het liefst alles bij het oude. Hoog tijd dat we dat gaan veranderen.Wat zijn we trots dat we @USER mogen voordragen als topkandidaat voor de @USER 💪(LINK)  ...
+
+>Class 1 tweets predicted as class 1 tweets:
+                                           Tweet  ...
+      @USER Dank voor je steun! 👊💚 ^Liz #HASHTAG  ...
+                    @USER Zie hier 👇 ^Evi (LINK)  ...
+                   Kijk je mee?🕖 19:00 uur📍 NPO1  ...
+              @USER Mooi nieuws! 🥳 #HASHTAG ^Evi  ...
+@USER Zo is het! 🙌 ^Kim #HASHTAG #HASHTAG (LINK)  ...
+    @USER Dat lees je hier: (LINK) #HASHTAG ^Tom  ...
+@USER Leuk Jan Bert! Dank je wel 💚 ^Noa #HASHTAG  ...
+       @USER Thanks voor je steun! #HASHTAG ^Max  ...
+           @USER Zo is het! #HASHTAG ^Evi (LINK)  ...
+ @USER Héél trots! #HASHTAG #HASHTAG ^Tom (LINK)  ...
+
+
+--------------EVALUATION---------------
+
+Classification report: 
+['left' 'middle' 'right']
+              precision    recall  f1-score   support
+
+           0  0.4517396 0.4576464 0.4546738      1759
+           1  0.3030303 0.0120919 0.0232558       827
+           2  0.4763933 0.6559140 0.5519227      2046
+
+    accuracy                      0.4656736      4632
+   macro avg  0.4103877 0.3752174 0.3432841      4632
+weighted avg  0.4360788 0.4656736 0.4206040      4632
+
+Confusion matrix: 
+['left' 'middle' 'right']
+[[ 805    9  945]
+ [ 287   10  530]
+ [ 690   14 1342]]
+
+Sentence check:
+['left' 'middle' 'right']
+Instance, true label, predicted label
+130. ".@USER wil álle Nederlandse soevereiniteit weggeven. Maar over #HASHTAG hebben ze onzinverhalen over "buitenlandse inmenging".@USER wil weten: Hoe noemt @USER het als een ambassadeur een partijleider als dank voor steun aan #HASHTAG een penthouse in Scheveningen geeft? (LINK)": 2, 2
+260. ""De problemen op de ‘woningmarkt’, de problemen qua volkshuisvesting, zijn nog nooit zo groot geweest. Er is een woonkloof: tussen mensen die op tijd een huis konden kopen of huren, en mensen die dat gewoon niet meer lukt."Kamerlid @USER over de #HASHTAG (LINK)": 0, 0
+390. "Luistertip! 📻Straks is @USER bij @USER over het Zorgbuurthuis.Luister vanaf 12.05 uur mee via @USER Zorgbuurthuis in Oss is opgeleverd! Lees hier meer 👇(LINK) (LINK)": 0, 0
+520. "Waarom voelen we ons steeds vaker niet meer veilig? We bespreken het om 17:00 bij #HASHTAG Live met oud-politieprominent Klaas Wilting.Ook in de uitzending: ondernemer Johan Habets over de evenementenbranche en Statenlid Michiel Fiscalini over kernenergie in Utrecht. Tot zo! (LINK)": 2, 2
+650. "Vandaag zijn @USER @USER &amp; @USER exact één jaar Tweede Kamerlid voor de PARTY! Vergeet ze niet te volgen om te zien hoeveel werk ze verzetten🙂 (LINK)": 0, 0
+780. "PARTY stevig op 24 zetels! #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 2
+910. "Vandaag is Aswoensdag. Dit is een katholieke traditie die de start is van de Vastentijd en voorbereiding op het Paasfeest.Iedereen die deze tijd van bezinning ingaat een gezegende tijd gewenst! #HASHTAG (LINK)": 0, 2
+1040. "Wilders: “Wat een gênante vertoning op het podium net”@USER #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+1170. "We zijn live met de online talkshow #HASHTAG Met kandidaat-Kamerleden, wetenschappers en activisten. 💚Kijk mee via (LINK)": 0, 2
+1300. "Al meer dan 10 DUIZEND mensen openden een gesprek met onze Zweeflijn. 📲😱Heb je een vraag over onze plannen? Tot en met vanavond zit ons team van vrijwilligers, beleidsmedewerkers en Kamerleden klaar om je te antwoorden!🔥 (LINK) 🔥": 0, 2
+1430. "Het voorstel om giften aan partijen te maximeren op €100.000, is aangenomen! Een belangrijke stap waarmee we de macht van geld kunnen inperken. Want in een democratie telt iedere stem even zwaar. 🗳 (LINK)": 0, 2
+1560. "Belachelijk besluit. En wat een selectieve verontwaardiging over de ‘rechtsorde’. Ze zijn wel eerder met zijn allen naar Iran en Saoedi-Arabië geweest waar ze vrouwen stenigen en afvalligen onthoofden. Maar dat was geen probleem.": 2, 2
+1690. "#HASHTAG wil investeren in snelle dataverbindingen voor heel NL zodat wij het snelste internet ter wereld krijgen. Veel belangrijker voor ons #HASHTAG dan het afschaffen van de #HASHTAG van Rutte. (LINK)": 2, 2
+1820. "De oorlog in Oekraïne heeft grote gevolgen voor mensen. Daarom maken we nóg ambitieuzere afspraken.▶️ We halen de NAVO-norm in 2024.▶️ Het minimumloon gaat sneller omhoog.▶️ Vervuilende industrie en grote bedrijven betalen meer belasting.(LINK)": 1, 2
+1950. ""De situatie op Griekse eilanden is dramatisch en de Europese Unie en Griekenland moeten nu in actie komen."Oproep van @USER (LINK)": 0, 2
+2080. "Het zijn leugenaars.Geloof ze nooit.#HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+2210. "Meer weten over hoe we lokaal de markt uit de zorg halen? Kijk hoe we dat doen in #HASHTAG": 0, 2
+2340. "Dus PARTY, de PARTY, de PARTY en PARTY gaan demonstreren tegen de PARTY. Wat een armoede. Vier partijen die allemaal op fors verlies staan in de peilingen. Samen tegen de enige echte volkspartij die op winst staat. Bijna zielig.": 2, 2
+2470. "Hoe gezond je bent hangt niet alleen af van het lichaam. Je opleiding, werk en sociale omstandigheden hebben daar veel invloed op. Daarom willen we gezondheid een prominente plek geven in onze samenleving. Zo kunnen we voorkomen dat mensen ziek worden.(LINK)": 1, 2
+2600. "@USER @USER Wellicht heb je het gemist, maar we zijn in maart naar de stembus gegaan. PARTY kreeg meer dan 1.5 miljoen stemmen. ^Tom": 1, 2
+---------------------------------------
+
+
+EXPERIMENT 6: syllable_amount removed
+--------------ERROR ANALYSIS---------------
+MISTAKES:
+>Class 0 tweets predicted as class 1 tweets:
+Empty DataFrame
+Columns: [Tweet, Gold label, Prediction]
+Index: []
+
+>Class 1 tweets predicted as class 0 tweets:
+                                                                                                                                                                      Tweet  ...
+                       “De politiek moet de deeltjesversneller zijn van het politieke debat. Het is aan ons om discussies los te maken.”- @USER tijdens het #HASHTAG (LINK)  ...
+                @USER Voor aardigheid staan we sowieso! 😉 Als je meer wil weten over onze standpunten kun je ons altijd een DM sturen, dan vertellen we je graag meer! ^Kim  ...
+                                                       @USER @USER @USER Mochten wij een van die partijen zijn, kijk dan vooral op onze partijdige kieswijzer (LINK) 😉 ^Jay  ...
+                                                                                   @USER Fijn dat je ook keek Ingrid! En hopelijk tot snel in levende lijve 💚 #HASHTAG ^Tom  ...
+                                                                                   @USER Heb je het manifest ook al getekend? Check het hier: (LINK) ^Liz #HASHTAG #HASHTAG  ...
+                                                                                                                                                                        ...  ...
+                        @USER Goede morgen, Mink! Soms is het inderdaad beter om je eens om te draaien en dan met je goede been uit bed te stappen 😉 Fijne dag, ^Liz (LINK)  ...
+@USER Het gaat om tijdelijke arbeidsmigratie van max vier jaar. We maken afspraken met landen van herkomst over terugkeer. Het hele plan lees je hier: (LINK) #HASHTAG ^Tom  ...
+                                                                                                                           @USER @USER Wij zijn vóór, Paul 😉💚 ^Liz #HASHTAG  ...
+                                                                                                                                @USER @USER Top! Goed bezig 👏 #HASHTAG ^Kim  ...
+                                                                                                    Lees de brief van @USER aan iedereen in Nederland hier: #HASHTAG (LINK)  ...
+
+CORRECT:
+>Class 0 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                     Tweet  ...
+                                                                                                                                      Tijd voor actie! ✊Kom naar het congres van PARTY en @USER op zaterdag 4 februari. Meld je hier aan: (LINK) ☁️ (LINK)  ...
+                                                                                                  @USER @USER @USER @USER @USER @USER App ons vooral als je vragen hebt over ons programma! (Of als je wilt dat we je overtuigen natuurlijk 😉)+31613232050  ...
+Een mooie erkenning van alle onterecht beschuldigde ouders en van iedereen die knokt voor rechtvaardigheid.Super trots op onze @USER die samen met Pieter Omtzigt de prijs in ontvangst nam voor de Politieke Prestatie van 2019!💪#HASHTAG #HASHTAG (LINK)  ...
+                                                                                                                                                                              @USER @USER @USER Hier heb je een link naar onze provinciale plannen: (LINK)  ...
+                                                                                                                                                                                                                  Terugkijken: (LINK) (vanaf 24:50) (LINK)  ...
+                                                                                                                                                                                                                                                       ...  ...
+                                                                                                                       Kijktip! 📺@USER is vanavond bij @USER over de gevolgen van de gestegen energierekening en sport.Kijk om 19:30 mee naar @USER (LINK)  ...
+                                                                                                                                                               Zet de volgende stap. Meld je aan voor de #HASHTAG op 10 maart in Amsterdam. 👉(LINK) (LINK)  ...
+                                                                                                            @USER Sorry, dat woord is in dit licht inderdaad stom gekozen. Wat ik bedoelde: er is iets misgegaan bij het stemmen, en dat wordt rechtgezet.  ...
+                                                                                                                                                                                                  Straks om 9.30 uur 👉 @USER bij @USER Kijk je mee? (LINK)  ...
+           De traditionele partijen - die het in Europa al jaren voor het zeggen hebben - laten het liefst alles bij het oude. Hoog tijd dat we dat gaan veranderen.Wat zijn we trots dat we @USER mogen voordragen als topkandidaat voor de @USER 💪(LINK)  ...
+
+>Class 1 tweets predicted as class 1 tweets:
+Empty DataFrame
+Columns: [Tweet, Gold label, Prediction]
+Index: []
+
+
+--------------EVALUATION---------------
+
+Classification report: 
+['left' 'middle' 'right']
+              precision    recall  f1-score   support
+
+           0  0.4427340 0.4087550 0.4250665      1759
+           1  0.0000000 0.0000000 0.0000000       827
+           2  0.4584441 0.6739980 0.5457064      2046
+
+    accuracy                      0.4529361      4632
+   macro avg  0.3003927 0.3609177 0.3235910      4632
+weighted avg  0.3706273 0.4529361 0.4024627      4632
+
+Confusion matrix: 
+['left' 'middle' 'right']
+[[ 719    0 1040]
+ [ 238    0  589]
+ [ 667    0 1379]]
+
+Sentence check:
+['left' 'middle' 'right']
+Instance, true label, predicted label
+130. ".@USER wil álle Nederlandse soevereiniteit weggeven. Maar over #HASHTAG hebben ze onzinverhalen over "buitenlandse inmenging".@USER wil weten: Hoe noemt @USER het als een ambassadeur een partijleider als dank voor steun aan #HASHTAG een penthouse in Scheveningen geeft? (LINK)": 2, 2
+260. ""De problemen op de ‘woningmarkt’, de problemen qua volkshuisvesting, zijn nog nooit zo groot geweest. Er is een woonkloof: tussen mensen die op tijd een huis konden kopen of huren, en mensen die dat gewoon niet meer lukt."Kamerlid @USER over de #HASHTAG (LINK)": 0, 0
+390. "Luistertip! 📻Straks is @USER bij @USER over het Zorgbuurthuis.Luister vanaf 12.05 uur mee via @USER Zorgbuurthuis in Oss is opgeleverd! Lees hier meer 👇(LINK) (LINK)": 0, 0
+520. "Waarom voelen we ons steeds vaker niet meer veilig? We bespreken het om 17:00 bij #HASHTAG Live met oud-politieprominent Klaas Wilting.Ook in de uitzending: ondernemer Johan Habets over de evenementenbranche en Statenlid Michiel Fiscalini over kernenergie in Utrecht. Tot zo! (LINK)": 2, 2
+650. "Vandaag zijn @USER @USER &amp; @USER exact één jaar Tweede Kamerlid voor de PARTY! Vergeet ze niet te volgen om te zien hoeveel werk ze verzetten🙂 (LINK)": 0, 0
+780. "PARTY stevig op 24 zetels! #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 2
+910. "Vandaag is Aswoensdag. Dit is een katholieke traditie die de start is van de Vastentijd en voorbereiding op het Paasfeest.Iedereen die deze tijd van bezinning ingaat een gezegende tijd gewenst! #HASHTAG (LINK)": 0, 2
+1040. "Wilders: “Wat een gênante vertoning op het podium net”@USER #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+1170. "We zijn live met de online talkshow #HASHTAG Met kandidaat-Kamerleden, wetenschappers en activisten. 💚Kijk mee via (LINK)": 0, 2
+1300. "Al meer dan 10 DUIZEND mensen openden een gesprek met onze Zweeflijn. 📲😱Heb je een vraag over onze plannen? Tot en met vanavond zit ons team van vrijwilligers, beleidsmedewerkers en Kamerleden klaar om je te antwoorden!🔥 (LINK) 🔥": 0, 2
+1430. "Het voorstel om giften aan partijen te maximeren op €100.000, is aangenomen! Een belangrijke stap waarmee we de macht van geld kunnen inperken. Want in een democratie telt iedere stem even zwaar. 🗳 (LINK)": 0, 2
+1560. "Belachelijk besluit. En wat een selectieve verontwaardiging over de ‘rechtsorde’. Ze zijn wel eerder met zijn allen naar Iran en Saoedi-Arabië geweest waar ze vrouwen stenigen en afvalligen onthoofden. Maar dat was geen probleem.": 2, 2
+1690. "#HASHTAG wil investeren in snelle dataverbindingen voor heel NL zodat wij het snelste internet ter wereld krijgen. Veel belangrijker voor ons #HASHTAG dan het afschaffen van de #HASHTAG van Rutte. (LINK)": 2, 2
+1820. "De oorlog in Oekraïne heeft grote gevolgen voor mensen. Daarom maken we nóg ambitieuzere afspraken.▶️ We halen de NAVO-norm in 2024.▶️ Het minimumloon gaat sneller omhoog.▶️ Vervuilende industrie en grote bedrijven betalen meer belasting.(LINK)": 1, 2
+1950. ""De situatie op Griekse eilanden is dramatisch en de Europese Unie en Griekenland moeten nu in actie komen."Oproep van @USER (LINK)": 0, 2
+2080. "Het zijn leugenaars.Geloof ze nooit.#HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+2210. "Meer weten over hoe we lokaal de markt uit de zorg halen? Kijk hoe we dat doen in #HASHTAG": 0, 2
+2340. "Dus PARTY, de PARTY, de PARTY en PARTY gaan demonstreren tegen de PARTY. Wat een armoede. Vier partijen die allemaal op fors verlies staan in de peilingen. Samen tegen de enige echte volkspartij die op winst staat. Bijna zielig.": 2, 2
+2470. "Hoe gezond je bent hangt niet alleen af van het lichaam. Je opleiding, werk en sociale omstandigheden hebben daar veel invloed op. Daarom willen we gezondheid een prominente plek geven in onze samenleving. Zo kunnen we voorkomen dat mensen ziek worden.(LINK)": 1, 2
+2600. "@USER @USER Wellicht heb je het gemist, maar we zijn in maart naar de stembus gegaan. PARTY kreeg meer dan 1.5 miljoen stemmen. ^Tom": 1, 2
+---------------------------------------
+
+
+EXPERIMENT 7: polysyllable_amount removed
+--------------ERROR ANALYSIS---------------
+MISTAKES:
+>Class 0 tweets predicted as class 1 tweets:
+Empty DataFrame
+Columns: [Tweet, Gold label, Prediction]
+Index: []
+
+>Class 1 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                                                     Tweet  ...
+@USER De PARTY-fractie heeft het verzoek bij het CPB en SCP neergelegd om naar de mogelijke brede effecten van verschillende vormen van een basisinkomen te kijken. Voor PARTY is het altijd belangrijk dat het wel aantrekkelijk is om vanuit een uitkering te gaan werken. ^Liz #HASHTAG  ...
+                                                                                                                                      “De politiek moet de deeltjesversneller zijn van het politieke debat. Het is aan ons om discussies los te maken.”- @USER tijdens het #HASHTAG (LINK)  ...
+                                                                                                                               @USER Voor aardigheid staan we sowieso! 😉 Als je meer wil weten over onze standpunten kun je ons altijd een DM sturen, dan vertellen we je graag meer! ^Kim  ...
+                                                                                                                                                                      @USER @USER @USER Mochten wij een van die partijen zijn, kijk dan vooral op onze partijdige kieswijzer (LINK) 😉 ^Jay  ...
+                                                                                                                                                                                                  @USER Fijn dat je ook keek Ingrid! En hopelijk tot snel in levende lijve 💚 #HASHTAG ^Tom  ...
+                                                                                                                                                                                                                                                                                       ...  ...
+                                                                                                                                       @USER Goede morgen, Mink! Soms is het inderdaad beter om je eens om te draaien en dan met je goede been uit bed te stappen 😉 Fijne dag, ^Liz (LINK)  ...
+                                                                                                                                                                                                                                          @USER @USER Wij zijn vóór, Paul 😉💚 ^Liz #HASHTAG  ...
+                                                               Hoe vrij zijn we als je uren in de file staat en tegelijkertijd het milieu vervuilt?🌳 Een slimme kilometer- en spitsheffing zorgt voor minder uitstoot, minder files en voor schone lucht. Lees onze plannen 👇(LINK) (LINK)  ...
+                                                                                                                                                                                                                                               @USER @USER Top! Goed bezig 👏 #HASHTAG ^Kim  ...
+                                                                                                                                                                                                                   Lees de brief van @USER aan iedereen in Nederland hier: #HASHTAG (LINK)  ...
+
+CORRECT:
+>Class 0 tweets predicted as class 0 tweets:
+                                                                                                                                                                                                                                                     Tweet  ...
+                                                                                                                                      Tijd voor actie! ✊Kom naar het congres van PARTY en @USER op zaterdag 4 februari. Meld je hier aan: (LINK) ☁️ (LINK)  ...
+                                                                                                  @USER @USER @USER @USER @USER @USER App ons vooral als je vragen hebt over ons programma! (Of als je wilt dat we je overtuigen natuurlijk 😉)+31613232050  ...
+Een mooie erkenning van alle onterecht beschuldigde ouders en van iedereen die knokt voor rechtvaardigheid.Super trots op onze @USER die samen met Pieter Omtzigt de prijs in ontvangst nam voor de Politieke Prestatie van 2019!💪#HASHTAG #HASHTAG (LINK)  ...
+                                                                                                                                                                              @USER @USER @USER Hier heb je een link naar onze provinciale plannen: (LINK)  ...
+                                                                                                                                                                                                                  Terugkijken: (LINK) (vanaf 24:50) (LINK)  ...
+                                                                                                                                                                                                                                                       ...  ...
+         Pakketbezorgers moeten vaak tussen de 200 en 300 pakketjes per dag bezorgen. Dat zijn er nóg meer op dagen als #HASHTAG En dat allemaal voor een laag loon en onder slechte werkomstandigheden.Dat moet écht anders. De oproep van @USER ⤵️(LINK)  ...
+                                                                                                                                                               Zet de volgende stap. Meld je aan voor de #HASHTAG op 10 maart in Amsterdam. 👉(LINK) (LINK)  ...
+                                                                                                            @USER Sorry, dat woord is in dit licht inderdaad stom gekozen. Wat ik bedoelde: er is iets misgegaan bij het stemmen, en dat wordt rechtgezet.  ...
+                                                                                                                                                                                                  Straks om 9.30 uur 👉 @USER bij @USER Kijk je mee? (LINK)  ...
+           De traditionele partijen - die het in Europa al jaren voor het zeggen hebben - laten het liefst alles bij het oude. Hoog tijd dat we dat gaan veranderen.Wat zijn we trots dat we @USER mogen voordragen als topkandidaat voor de @USER 💪(LINK)  ...
+
+>Class 1 tweets predicted as class 1 tweets:
+Empty DataFrame
+Columns: [Tweet, Gold label, Prediction]
+Index: []
+
+
+--------------EVALUATION---------------
+
+Classification report: 
+['left' 'middle' 'right']
+              precision    recall  f1-score   support
+
+           0  0.4450801 0.4422968 0.4436841      1759
+           1  0.0000000 0.0000000 0.0000000       827
+           2  0.4722607 0.6656891 0.5525355      2046
+
+    accuracy                      0.4620035      4632
+   macro avg  0.3057803 0.3693286 0.3320732      4632
+weighted avg  0.3776212 0.4620035 0.4125492      4632
+
+Confusion matrix: 
+['left' 'middle' 'right']
+[[ 778    0  981]
+ [ 286    0  541]
+ [ 684    0 1362]]
+
+Sentence check:
+['left' 'middle' 'right']
+Instance, true label, predicted label
+130. ".@USER wil álle Nederlandse soevereiniteit weggeven. Maar over #HASHTAG hebben ze onzinverhalen over "buitenlandse inmenging".@USER wil weten: Hoe noemt @USER het als een ambassadeur een partijleider als dank voor steun aan #HASHTAG een penthouse in Scheveningen geeft? (LINK)": 2, 2
+260. ""De problemen op de ‘woningmarkt’, de problemen qua volkshuisvesting, zijn nog nooit zo groot geweest. Er is een woonkloof: tussen mensen die op tijd een huis konden kopen of huren, en mensen die dat gewoon niet meer lukt."Kamerlid @USER over de #HASHTAG (LINK)": 0, 0
+390. "Luistertip! 📻Straks is @USER bij @USER over het Zorgbuurthuis.Luister vanaf 12.05 uur mee via @USER Zorgbuurthuis in Oss is opgeleverd! Lees hier meer 👇(LINK) (LINK)": 0, 2
+520. "Waarom voelen we ons steeds vaker niet meer veilig? We bespreken het om 17:00 bij #HASHTAG Live met oud-politieprominent Klaas Wilting.Ook in de uitzending: ondernemer Johan Habets over de evenementenbranche en Statenlid Michiel Fiscalini over kernenergie in Utrecht. Tot zo! (LINK)": 2, 2
+650. "Vandaag zijn @USER @USER &amp; @USER exact één jaar Tweede Kamerlid voor de PARTY! Vergeet ze niet te volgen om te zien hoeveel werk ze verzetten🙂 (LINK)": 0, 0
+780. "PARTY stevig op 24 zetels! #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 0
+910. "Vandaag is Aswoensdag. Dit is een katholieke traditie die de start is van de Vastentijd en voorbereiding op het Paasfeest.Iedereen die deze tijd van bezinning ingaat een gezegende tijd gewenst! #HASHTAG (LINK)": 0, 2
+1040. "Wilders: “Wat een gênante vertoning op het podium net”@USER #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 2
+1170. "We zijn live met de online talkshow #HASHTAG Met kandidaat-Kamerleden, wetenschappers en activisten. 💚Kijk mee via (LINK)": 0, 2
+1300. "Al meer dan 10 DUIZEND mensen openden een gesprek met onze Zweeflijn. 📲😱Heb je een vraag over onze plannen? Tot en met vanavond zit ons team van vrijwilligers, beleidsmedewerkers en Kamerleden klaar om je te antwoorden!🔥 (LINK) 🔥": 0, 2
+1430. "Het voorstel om giften aan partijen te maximeren op €100.000, is aangenomen! Een belangrijke stap waarmee we de macht van geld kunnen inperken. Want in een democratie telt iedere stem even zwaar. 🗳 (LINK)": 0, 2
+1560. "Belachelijk besluit. En wat een selectieve verontwaardiging over de ‘rechtsorde’. Ze zijn wel eerder met zijn allen naar Iran en Saoedi-Arabië geweest waar ze vrouwen stenigen en afvalligen onthoofden. Maar dat was geen probleem.": 2, 2
+1690. "#HASHTAG wil investeren in snelle dataverbindingen voor heel NL zodat wij het snelste internet ter wereld krijgen. Veel belangrijker voor ons #HASHTAG dan het afschaffen van de #HASHTAG van Rutte. (LINK)": 2, 2
+1820. "De oorlog in Oekraïne heeft grote gevolgen voor mensen. Daarom maken we nóg ambitieuzere afspraken.▶️ We halen de NAVO-norm in 2024.▶️ Het minimumloon gaat sneller omhoog.▶️ Vervuilende industrie en grote bedrijven betalen meer belasting.(LINK)": 1, 2
+1950. ""De situatie op Griekse eilanden is dramatisch en de Europese Unie en Griekenland moeten nu in actie komen."Oproep van @USER (LINK)": 0, 2
+2080. "Het zijn leugenaars.Geloof ze nooit.#HASHTAG #HASHTAG #HASHTAG #HASHTAG (LINK)": 2, 2
+2210. "Meer weten over hoe we lokaal de markt uit de zorg halen? Kijk hoe we dat doen in #HASHTAG": 0, 0
+2340. "Dus PARTY, de PARTY, de PARTY en PARTY gaan demonstreren tegen de PARTY. Wat een armoede. Vier partijen die allemaal op fors verlies staan in de peilingen. Samen tegen de enige echte volkspartij die op winst staat. Bijna zielig.": 2, 2
+2470. "Hoe gezond je bent hangt niet alleen af van het lichaam. Je opleiding, werk en sociale omstandigheden hebben daar veel invloed op. Daarom willen we gezondheid een prominente plek geven in onze samenleving. Zo kunnen we voorkomen dat mensen ziek worden.(LINK)": 1, 2
+2600. "@USER @USER Wellicht heb je het gemist, maar we zijn in maart naar de stembus gegaan. PARTY kreeg meer dan 1.5 miljoen stemmen. ^Tom": 1, 2
+---------------------------------------

@@ -5,7 +5,7 @@
         "twitter_handle": "d66",
         "considered_populist": "no",
         "role": "coalition",
-        "ideology_l_r": "middle",
+        "ideology_l_r": "left",
         "ideology_p_c": "progressive"
         },
         {
@@ -22,7 +22,7 @@
         "considered_populist": "no",
         "role": "opposition",
         "ideology_l_r": "left",
-        "ideology_p_c": "middle"
+        "ideology_p_c": "conservative"
         },
         {
         "party": "SGP",

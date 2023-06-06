@@ -3,12 +3,12 @@ from helper_features import get_function_words
 from nltk.corpus import stopwords
 
 data_set = 'large_data'
-target_label = 'Populist'
+target_label = 'Prog/cons'
 min_frequency = 50
 max_frequency = 1000
-iterations = 10000
+iterations = 1000
 dev = False
-outfile = 'readability'
+outfile = 'readability_progcons'
 
 # Define what features to extract
 feature_dict = dict()
@@ -45,6 +45,24 @@ f = open(f'../results/{data_set}/descriptives_{outfile}.txt', 'w', encoding="utf
 f.write('READABILITY\n')
 f.write('\n\n\n')
 
-# Experiment 1: all words included
-stopwords_complete = stopwords + data_specific_words + list_of_topic_words
-classifier(data_set, target_label, min_frequency, max_frequency, iterations, feature_dict, stopwords_complete, dev, outfile)
+# Experiment 1: all features included
+
+print('EXPERIMENT 1: all features')
+f.write('\n\nEXPERIMENT 1: all features')
+f.close()
+stopwords_complete = []
+classifier(data_set, target_label, min_frequency, iterations, feature_dict, stopwords_complete, dev, outfile)
+
+
+# Abblation study
+counter = 1
+targeted_features = ['flesch-kincaid', 'smog', 'word_amount', 'sentence_amount', 'syllable_amount', 'polysyllable_amount']
+for feature in targeted_features:
+    counter += 1
+    f = open(f'../results/{data_set}/descriptives_{outfile}.txt', 'a', encoding="utf-8")
+    print('EXPERIMENT ', counter,': ', feature, ' removed')
+    f.write(f'\n\nEXPERIMENT {counter}: {feature} removed')
+    f.close()
+    feature_dict[feature] = False
+    classifier(data_set, target_label, min_frequency, iterations, feature_dict, stopwords_complete, dev, outfile)
+    feature_dict[feature] = True

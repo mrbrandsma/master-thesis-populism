@@ -7,10 +7,15 @@ import re
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction import DictVectorizer
-from sklearn.feature_extraction.text import TfidfVectorizer
 import pandas as pd
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import AutoTokenizer, AutoModel, TFAutoModel
+import torch
+import requests
+from bs4 import BeautifulSoup
 #nltk.download('punkt')
 #nltk.download('cmudict')
+
 
 ### TF-IDF #####################
 def get_function_words(wanted_types=['articles', 'prepositions', 'quantifiers', 'conjunctions', 'pronouns', 'auxiliary verbs', 'adverbs', 'modifiers', 'interjections']):
@@ -151,7 +156,7 @@ def get_stop_words(data,
     return(word_list)
 
 
-def dataframe_coefficients(classifier, vect, dataset, outfile, top_features=20):
+def dataframe_coefficients(classifier, vect, dataset, outfile, label_encoder, top_features=20):
     """
     Based on Myrthe Reuver's code at https://github.com/myrthereuver/claims-reproduction/blob/main/analysis_reproduction/notebooks/SVM_UKPdata.ipynb
     """
@@ -165,8 +170,10 @@ def dataframe_coefficients(classifier, vect, dataset, outfile, top_features=20):
     df.columns='coefficient','word'
     df.sort_values(by='coefficient')
 
-    positive = "Non-populist"
-    negative = "Populist"
+    labels = label_encoder.classes_
+
+    positive = labels[0]
+    negative = labels[-1]
     
 #     df_negativeclass = df[df['coefficient'] < 0]
     df_negativeclass = df.sort_values(by='coefficient', ascending=False)
@@ -295,6 +302,18 @@ def get_tfidf(train_data, test_data, min_frequency, stopwords):
 
     return(train_tfidf_vectors, test_tfidf_vectors, tweet_vectorizer)
 
+
+def get_sentiment(tweet, tokenizer, model):
+    """
+    Uses BERTje to get a tweet's sentiment
+    """
+
+    tokens = tokenizer.encode(tweet, return_tensors = 'pt')
+    result = model(tokens)
+    sentiment_score = int(torch.argmax(result.logits)) + 1
+
+    return(sentiment_score)
+
 #################################
 
 def get_features(data, features_to_extract):
@@ -306,12 +325,6 @@ def get_features(data, features_to_extract):
     features = []
     for i, instance in enumerate(data):
         feature_dict = dict()
-
-        # TAKES VERY LONG. DOES NOT WORK.
-        #if features_to_extract['tf-idf'] == True:
-            # TFIDF features
-            #tfidf_dense = tfidf.toarray()
-            #feature_dict['TF-IDF'] = tfidf_dense[i]
 
         # Readability features
         detailed_information, flesch_kincaid, smog = get_readability_scores(instance)
@@ -336,6 +349,12 @@ def get_features(data, features_to_extract):
         
         # Append to data list
         features.append(feature_dict)
+        
+        tokenizer = AutoTokenizer.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
+        model = AutoModelForSequenceClassification.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
+
+        if features_to_extract['sentiment'] == True:
+            feature_dict['Sentiment'] = get_sentiment(instance, tokenizer, model)
     
     return(features)
 

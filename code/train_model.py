@@ -25,19 +25,24 @@ feature_dict['polysyllable_amount'] = False
 stopwords = stopwords.words('dutch')
 list_of_function_words = ['articles', 'prepositions', 'quantifiers', 'conjunctions', 
                         'pronouns', 'auxiliary verbs', 'adverbs', 'modifiers', 'interjections']
-function_words_to_remove = get_function_words(wanted_types=[
-                        'articles', 
-                        'prepositions', 
-                        'quantifiers', 
-                        'conjunctions', 
-                        'pronouns', 
-                        'auxiliary verbs', 
-                        'adverbs', 
-                        'modifiers', 
-                        'interjections'
-                        ])
-data_specific_words = ['!', '#', '%', '&', "'", '(', ')', '+', ',', '-', '.', '...', '1', '1/2', '10', '100', '11', '12', '13', '14', '15', '16', '17', '19.30', '2', '20', '20.00', '2018', '2019', '2020', '2021', '20:00', '21', '23', '25', '3', '30', '4', '5', '50', '6', '7', '9', ':', ';', '=', '?', '@', '^bas', '^evi', '^ivo', '^kaj', '^kim', '^liz', '^luuk', '^noa', '^r', '^sb', '^tom', '_', '_^luuk', '``', 'baudet',  'forum', 'fvd', 'geert', 'hans', 'hoekstra', 'jesse', 'kaag', 'lilian', 'lilianne', 'paul', 'ploumen', 'rob', 'ronald', 'rutte', 'sigrid', 'thierry', 'user', 'wilders', '||', 'écht', 'échte', 'één', '\u200d', '‘', '’', '“', '”', '…', '\u2066', '✅', '✊', '✍', '❤', '➡', '⤵️', '⬇', '️', '🇪', '🇺', '🌈', '🌍', '🌹', '🍀', '🍅', '🎉', '🎥', '🏡', '🏼', '👀', '👇', '👉', '👍', '👩', '💙', '💚', '💪', '📺', '📻', '🔥', '🔴', '🗳', '😉', '🙌', '🤯', '🧡']
+list_of_topic_words = ['islam', 'kartel', 'islamitisch', 'asielzoeker', 'gelukzoeker', 'lockdown', 
+                       'immigratie', 'toeslagenschandaal', 'klimaatakkoord', 'zorgverlener', 'aow', 
+                       'kringlooplandbouw', 'klimaatcrisis', 'duurzaam', 'abortus', 'klimaatverandering', 
+                       'progressief', 'uitstoot', 'groen', 'green', 'europees', 'leraar', 'student', 'klimaat', 'schoon', 
+                       'vluchteling', 'grens', 'koopkracht', 'groninger', 'natuur', 'onderwijs']
+data_specific_words = ['ha', 'hoi', 'hi', 'party-kamerlid', 'partykamerlid', 'inside', '!', '#', '%', '&', "'", '(', ')', '+', ',', '-', '.', '...', '1', '1/2', '10', '100', 
+                       '11', '12', '13', '14', '15', '16', '17', '19.30', '2', '20', '20.00', '2018', '2019', 
+                       '2020', '2021', '20:00', '21', '23', '25', '3', '30', '4', '5', '50', '6', '7', '9', 
+                       ':', ';', '=', '?', '@', '^bas', '^evi', '^ivo', '^kaj', '^kim', '^liz', '^luuk', '^noa', 
+                       '^r', '^sb', '^tom', '_', '_^luuk', '``', 'baudet',  'forum', 'fvd', 'geert', 'hans', 
+                       'hoekstra', 'raak', 'jesse', 'mark', 'kaag', 'lilian', 'lilianne', 'paul', 'ploumen', 'rob', 
+                       'ronald', 'rutte', 'sigrid', 'thierry', 'user', 'wilders', '||', '\u200d', '‘', '’', '“', '”', 
+                       '…', '\u2066', '✅', '✊', '✍', '❤', '➡', '⤵️', '⬇', 'luistertip', 'kijktip', 'vd', 'nl', 'oa',
+                       'socialer', 'leiderschap', 
+                       '️', '🇪', '🇺', '🌈', '🌍', '🌹', '🍀', '🍅', '🎉', '🎥', '🏡', '🏼', '👀', '👇', '👉', 
+                       '👍', '👩', '💙', '💚', '💪', '📺', '📻', '🔥', '🔴', '🗳', '😉', '🙌', '🤯', '🧡']
+function_words = get_function_words(wanted_types=list_of_function_words)
 
-stopwords_complete = stopwords + function_words_to_remove + data_specific_words
+stopwords_complete = stopwords + function_words + data_specific_words + list_of_topic_words
 
-classifier(data_set, target_label, min_frequency, max_frequency, iterations, feature_dict, stopwords_complete, dev, outfile)
+classifier(data_set, target_label, min_frequency, iterations, feature_dict, stopwords_complete, dev, outfile)
