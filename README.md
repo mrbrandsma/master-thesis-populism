@@ -22,45 +22,26 @@ CODE:
 11. train_model_tfidf.py: the code to train a classification model on lexical choice as a feature.
 
 DATA:
-1. party_data.json: contains a .json file with information about the different parties. This data can be edited here if needed.
-2. last_election_data_small: contains tweets from the current Dutch government, with up to 500 tweets per party up to the 17th of february 2023. The dataset contains 6666 tweets.
-3. last_election_data_large: contains all tweets from the current Dutch government up to the 17th of february 2023. The dataset contains 13.791 tweets.
-4. coalition_large: contains all tweets from the current coalition, which has been together since 2015. The dataset contains 105.986 tweets.
+1. large_data: contains all the data, including the information on divisions and descriptions. For more information on the data, see the corresponding paper about this thesis.
+2. party_data_small.json: contains a .json file with information about the different parties. This data can be edited here if needed.
 
 ----WHAT IS THE OUTPUT----
-retrieve_tweets: returns a dataset with tweets. The following information is included: index number, party name, date of posting, tweet content, whether the party is considered populist or not, it's role in the House of Representatives (opposition/coalition), horizontal ideology (left/right/middle), vertical ideology (progressive/conservative/middle).
+- retrieve_tweets.py: returns a dataset with tweets. The following information is included: index number, party name, date of posting, tweet content, whether the party is considered populist or not, its role in the House of Representatives (opposition/coalition), horizontal ideology (left/right/middle), vertical ideology (progressive/conservative/middle).
+- train_model_readability.py: model performances of linguistic simplicity, stored in 'results'.
+- train_model_tfidf.py: model performances of lexical choice, stored in 'results'.
 
 ----DATA USED----
-The following twitter accounts have been mined: 
+The following Twitter accounts have been mined: 
  - VVD              @VVD
- - CDA              @cdavandaag
  - D66              @D66
  - ChristenUnie     @christenunie
- - PVV              
+ - PVV              @geertwilderspvv
  - SP               @SPnl
  - PvdA             @PvdA
  - GroenLinks       @groenlinks
- - PvdD             @PartijvdDieren
  - FvD              @fvdemocratie
- - JA21             @JuisteAntwoord
  - SGP              @SGPnieuws
- - DENK             @DenkNL
- - Volt             @VoltNederland
- - BBB              @BoerBurgerB
- - BIJ1             @PolitiekBIJ1
-
-Working on adding politicians as well.
-
-----NEEDED PACKAGES----
-For retrieving the datasets:
-- snscraper
-- json
-- csv
-
 
 ----CONTACT----
 m.r.brandsma@student.vu.nl
-
-Retrieve the data:
-1. To retrieve the data, run data/retrieve_tweets.py. You can adjust settings here as well.
  
