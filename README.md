@@ -1,14 +1,25 @@
-# How to use the code
-
 ----WHAT IS THIS CODE FOR----
 This code can be used to collect and analyse twitter data from Dutch political parties for research into linguistic variety, focusing on populism.
 
 ----WHAT FILES ARE INCLUDED----
-This GitHub contains two different folders: a folder with Python code and a folder with datasets.
+This GitHub contains four different folders:
+- Analysis: documents containing feature information that can be used to analyse these features.
+- Code: all the code necessary to collect the data and to analyse it.
+- Data: contains the datasets and the files necessary to collect the data.
+- Results: contains .txt files with the results of the classification models.
 
 CODE: 
-1. modules.py: contains helper modules: clean_tweets, clean_date, get_tweets.
-2. retrieve_tweets.py: mines Twitter for tweets, no API keys necessary. Settings can be changed here.
+1. analyse_data.py: can analyse (such as averages) features stored in the Analysis folder.
+2. comparative_tfidf.py
+3. function_words.py: contains a function that returns function words. The user can choose what type of function words to include.
+4. helper_analysis.py: contains the helper functions for analyse_data.py.
+5. helper_classifier.py: contains functions for training and evaluating a classifier. Heavily relies on helper_features.py.
+6. helper_data.py: contains functions related to the importing and exporting of data.
+7. helper_features.py: contains functions related to feature extraction.
+8. process_data.py: code for preprocessing of the data.
+9. retrieve_tweets.py: code to pull tweets from Twitter. This code does not work anymore since the Twitter API is now only available for paying members.
+10. train_model_readability.py: the code to train a classification model on linguistic simplicity as a feature.
+11. train_model_tfidf.py: the code to train a classification model on lexical choice as a feature.
 
 DATA:
 1. party_data.json: contains a .json file with information about the different parties. This data can be edited here if needed.
