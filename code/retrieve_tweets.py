@@ -1,9 +1,5 @@
 from helper_data import get_tweets, get_data_description
 
-# Dates dutch government:
-    # Start Kabinet rutte_iv: 2022-01-10
-    # Start Kabinet rutte_iii: 2017-10-26
-
 # Settings
 party_data_path = '../data/party_data_small.json'       # json-file with information about target twitter accounts
 name_data = 'test'                                # name of data file, will determine the name of stored files

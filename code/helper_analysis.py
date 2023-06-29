@@ -113,11 +113,6 @@ def deep_clean(tweet):
     return(clean_tweet)
 
 
-def get_feature_averages(data):
-    """
-    
-    """
-
 def get_graphs(data, data_type, outfile, party_colours, label_colours):
     """
     Get graphs that give insight on the data

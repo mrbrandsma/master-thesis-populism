@@ -6,7 +6,6 @@ import sklearn
 from sklearn import svm
 from sklearn.metrics import classification_report
 import seaborn as sns
-from nltk.corpus import stopwords
 
 def data_processing(dataset,
                     target_label,
@@ -90,7 +89,7 @@ def evaluator(test_classes, test_prediction, label_encoder, test_instances, data
     f.write('\n--------------EVALUATION---------------\n')
 
     # Get the classification report
-    report = classification_report(test_classes, test_prediction, digits = 7)
+    report = classification_report(test_classes, test_prediction, digits=3)
     f.write('\nClassification report: \n')
     f.write(f'{label_encoder.classes_}\n')
     f.write(f'{report}\n')
@@ -175,7 +174,11 @@ def classifier(data_set,
                feature_dict,
                stopwords,
                dev,
-               outfile
+               outfile,
+               nl_spacy = None,
+               model = None,
+               tokenizer = None,
+               write_features_to_file = False
               ):
     """
     Main function that creates the classifier and evaluates it.
@@ -188,8 +191,38 @@ def classifier(data_set,
         train_tfidf_vectors, test_tfidf_vectors, vec = get_tfidf(tweets_train, tweets_test, min_frequency, stopwords)
 
     print("Getting training features")
-    features_train = get_features(tweets_train, feature_dict)
-    features_test = get_features(tweets_test, feature_dict)
+    features_train = get_features(tweets_train, feature_dict, nl_spacy, model, tokenizer)
+    features_test = get_features(tweets_test, feature_dict, nl_spacy, model, tokenizer)
+
+    # Write training features to file
+    if write_features_to_file == True:
+        training_file = f'../data/{data_set}/clean/clean_train.csv'
+        if dev == True:
+            testing_file = f'../data/{data_set}/clean/clean_dev.csv'
+        else: 
+            testing_file = f'../data/{data_set}/clean/clean_test.csv'
+        train_data_df = pd.read_csv(training_file, sep=',')
+        test_data_df = pd.read_csv(testing_file, sep=',')
+
+        feature_names = features_train[0].keys()
+        
+        # Training features
+        for feature in feature_names:
+            current_feature_train_list = []
+            current_feature_test_list = []
+            for train_item in features_train:
+                current_feature_train_list.append(train_item[feature])
+            for test_item in features_test:
+                current_feature_test_list.append(test_item[feature])
+            # Add feature list as column to new training data
+            train_data_df[feature] = current_feature_train_list
+            test_data_df[feature] = current_feature_test_list
+        
+        # Write to new file
+        training_outfile = f'../data/{data_set}/clean/clean_train_{outfile}_features.csv'
+        train_data_df.to_csv(training_outfile, sep=',')
+        testing_outfile = f'../data/{data_set}/clean/clean_test_{outfile}_features.csv'
+        test_data_df.to_csv(testing_outfile, sep=',')
 
     print("Vectorizing features")
     # Vectorize the features

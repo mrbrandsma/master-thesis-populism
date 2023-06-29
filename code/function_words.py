@@ -3,6 +3,10 @@
 
 
 def get_function_words(wanted_types=['articles', 'prepositions', 'quantifiers', 'conjunctions', 'pronouns', 'auxiliary verbs', 'adverbs', 'modifiers', 'interjections']):
+    """
+    This function returns a list of function words to remove.
+    The user can specify what types of function words they want returned.
+    """
     function_words = {
     "articles": ["de", "het", "een", "der", "des", "den"],
     "prepositions": ["à", "aan", "aangaande", "achter", "behalve", "behoudens", "beneden", "benevens", "benoorden", "benoordoosten", "benoordwesten",

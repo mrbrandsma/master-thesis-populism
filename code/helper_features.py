@@ -1,20 +1,13 @@
 import nltk
 import numpy as np
 import spacy
-import math
 from collections import Counter
 import re
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.feature_extraction import DictVectorizer
 import pandas as pd
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
-from transformers import AutoTokenizer, AutoModel, TFAutoModel
 import torch
-import requests
-from bs4 import BeautifulSoup
-#nltk.download('punkt')
-#nltk.download('cmudict')
 
 
 ### TF-IDF #####################
@@ -303,20 +296,9 @@ def get_tfidf(train_data, test_data, min_frequency, stopwords):
     return(train_tfidf_vectors, test_tfidf_vectors, tweet_vectorizer)
 
 
-def get_sentiment(tweet, tokenizer, model):
-    """
-    Uses BERTje to get a tweet's sentiment
-    """
-
-    tokens = tokenizer.encode(tweet, return_tensors = 'pt')
-    result = model(tokens)
-    sentiment_score = int(torch.argmax(result.logits)) + 1
-
-    return(sentiment_score)
-
 #################################
 
-def get_features(data, features_to_extract):
+def get_features(data, features_to_extract, nl_spacy, model, tokenizer):
     """
     Extracts the features and adds them to a vector
     """
@@ -327,39 +309,15 @@ def get_features(data, features_to_extract):
         feature_dict = dict()
 
         # Readability features
-        detailed_information, flesch_kincaid, smog = get_readability_scores(instance)
-
-        if features_to_extract['flesch-kincaid'] == True:
-            feature_dict['Flesch-Kincaid Formula'] = flesch_kincaid
-
-        if features_to_extract['smog'] == True:
-            feature_dict['SMOG Formula'] = smog
-        
-        if features_to_extract['word_amount'] == True:
-            feature_dict['Word amount'] = detailed_information['words']
-        
-        if features_to_extract['sentence_amount'] == True:
-            feature_dict['Word amount'] = detailed_information['sentences']
-
-        if features_to_extract['syllable_amount'] == True:
-            feature_dict['Syllable amount'] = detailed_information['syllables']
-
-        if features_to_extract['polysyllable_amount'] == True:
-            feature_dict['Polysyllable amount'] = detailed_information['polysyllables']
+        detailed_information, feature_dict = get_readability_scores(instance, features_to_extract, nl_spacy)
         
         # Append to data list
         features.append(feature_dict)
-        
-        tokenizer = AutoTokenizer.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
-        model = AutoModelForSequenceClassification.from_pretrained("nlptown/bert-base-multilingual-uncased-sentiment")
-
-        if features_to_extract['sentiment'] == True:
-            feature_dict['Sentiment'] = get_sentiment(instance, tokenizer, model)
     
     return(features)
 
 
-def get_readability_scores(tweet):
+def get_readability_scores(tweet, features_to_extract, nl_spacy):
     # Calculate word amount
     clean_tweet = re.sub(r'[^\w\s]', '', tweet)
     word_list = nltk.tokenize.word_tokenize(clean_tweet, language='dutch')
@@ -389,14 +347,45 @@ def get_readability_scores(tweet):
             syl_amount += syl_amount_word
         
     detailed_data = {'words': word_amount, 'sentences': sent_amount, 'syllables': syl_amount, 'polysyllables': pol_syl_amount}
+    features = dict()
 
-    # Flesch-Kincaid Reading Ease
-    flesch_kincaid = 206.835 - 1.015 * (word_amount / sent_amount) - 84.6 * (syl_amount / word_amount)
+    # Average words per sentence
+    if features_to_extract['w/s'] == True:
+        total_len = 0
+        for sentence in sent_list: 
+            words = nltk.tokenize.word_tokenize(sentence, language='dutch')
+            total_len += len(words)
+        avg_words_per_sentence = total_len / len(sent_list)
+        features['w/s'] = avg_words_per_sentence
 
-    # SMOG Index
-    smog = 1.0430 * math.sqrt(pol_syl_amount * (30 / sent_amount)) + 3.1291
+    # Leesindex A
+    if features_to_extract['Leesindex A'] == True:
+        leesindex_a = 195 - 2 * (word_amount / sent_amount) - 66.7 * (syl_amount / word_amount)
+        features['Leesindex A'] = leesindex_a
 
-    return(detailed_data, flesch_kincaid, smog)
+    # Flesch
+    if features_to_extract['flesch'] == True:
+        flesch = 206.835 - 1.015 * (word_amount / sent_amount) - 84.6 * (syl_amount / word_amount)
+        features['Flesch'] = flesch
+
+    # Flesch-Douma
+    if features_to_extract['flesch-douma'] == True:
+        flesch_douma = 206.835 - 0.93 * (word_amount / sent_amount) - 77 * (syl_amount / word_amount)
+        features['Flesch-Douma'] = flesch_douma
+
+    # Return all scores
+    return(detailed_data, features)
+
+
+def walk_tree(node, depth):
+    """
+    Gets the maximum depth. Taken from https://stackoverflow.com/questions/64591644/how-to-get-height-of-dependency-tree-with-spacy
+    """
+    if node.n_lefts + node.n_rights > 0:
+        return max(walk_tree(child, depth + 1) for child in node.children)
+    else:
+        return depth
+    
 
 def syllable_count(word):
     """
@@ -418,27 +407,6 @@ def syllable_count(word):
 
 
 ########################
-
-def combine_sparse_and_dense_features(dense_vectors, # tfidf as vectors
-                                      sparse_features # the traditional features as a list
-                                      ):
-    """
-    Function that takes sparse and dense feature representations and appends their vector representation
-    :return combined_vectors: list of arrays in which sparse and dense vectors are concatenated
-    """
-    combined_vectors = []
-
-    # Turn the traditional features into an array
-    sparse_vectors = np.array(sparse_features.toarray())
-
-    # Combine the sparse and dense features
-    for index, vector in enumerate(sparse_vectors):
-        combined_vector = np.concatenate((vector,dense_vectors[index]))
-        combined_vectors.append(combined_vector)
-    
-    # Return a combined vector of features
-    return combined_vectors
-
 
 def create_vectorizer(features # The features that the model should be trained on
                      ):

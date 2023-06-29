@@ -1,6 +1,5 @@
 import helper_analysis as helper
 import pandas as pd
-from nltk.corpus import stopwords
 
 # Define what files to use
 outfile = 'large_data'        # dataset

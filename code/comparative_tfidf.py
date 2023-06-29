@@ -2,12 +2,13 @@ from helper_classifier import classifier
 from helper_features import get_function_words
 from nltk.corpus import stopwords
 
+# Change settings here
 data_set = 'large_data'
-target_label = 'Role'
+target_label = 'Populism'
 min_frequency = 50
 iterations = 1000
 dev = False
-outfile = 'tfidf_role'
+outfile = 'tfidf'
 
 # Define what features to extract
 feature_dict = dict()

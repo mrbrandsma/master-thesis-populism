@@ -1,7 +1,5 @@
 import helper_analysis as helper
-import helper_features as features
 import pandas as pd
-from nltk.corpus import stopwords
 from nltk.tokenize import RegexpTokenizer
 import numpy as np
 from collections import Counter
@@ -9,99 +7,39 @@ import matplotlib.pyplot as plt
 
 outfile = 'large_data'        # dataset
 
-data_type = 'large_data_complete'
+# Change settings here
+#data_type = 'large_data_complete'
+file = 'progcons_features'
+target_label = 'Prog/cons'
 #data_type = 'dev'
-#data_type = 'train'
+data_type = 'train'
 #data_type = 'test'
 
 get_dict = dict()
 get_dict['tfidf'] = False
-get_dict['readability'] = False
+get_dict['readability'] = True
 get_dict['sentiment'] = False
-get_dict['general'] = True
+get_dict['general'] = False
+
 
 # Get data
 data = helper.get_data(outfile, data_type)
 
 if get_dict['readability'] == True:
-    # Get average scores for:
-    populist_readability = {'flesch_kincaid': [], 'SMOG': [], 'words': [], 'sentences': [], 
-                        'syllables': [], 'polysyllables': []}
-    non_populist_readability = {'flesch_kincaid': [], 'SMOG': [], 'words': [], 'sentences': [], 
-                        'syllables': [], 'polysyllables': []}
-    party_data = dict()
-#    Separate parties for later
-    pop_party_list = []
-    non_pop_party_list = []
+    df_readability = pd.read_csv(f"../data/large_data/clean/clean_{data_type}_readability_{file}.csv")
 
-    # Add info on readability to data
-    for instance in data:
-        detailed_data, flesch_kincaid, smog = features.get_readability_scores(instance['Tweet'])
-
-        if instance['Populist'] == 'yes':
-            if instance['Party'] not in pop_party_list:
-                pop_party_list.append(instance['Party'])
-            populist_readability['words'].append(detailed_data['words'])
-            populist_readability['sentences'].append(detailed_data['sentences'])
-            populist_readability['syllables'].append(detailed_data['syllables'])
-            populist_readability['polysyllables'].append(detailed_data['polysyllables'])
-            populist_readability['flesch_kincaid'].append(flesch_kincaid)
-            populist_readability['SMOG'].append(smog)
-        else:
-            if instance['Party'] not in non_pop_party_list:
-                non_pop_party_list.append(instance['Party'])
-            non_populist_readability['words'].append(detailed_data['words'])
-            non_populist_readability['sentences'].append(detailed_data['sentences'])
-            non_populist_readability['syllables'].append(detailed_data['syllables'])
-            non_populist_readability['polysyllables'].append(detailed_data['polysyllables'])
-            non_populist_readability['flesch_kincaid'].append(flesch_kincaid)
-            non_populist_readability['SMOG'].append(smog)
-
-        if instance['Party'] not in party_data:
-            party_data[instance['Party']] = {'flesch_kincaid': [], 'SMOG': [], 'words': [], 'sentences': [], 
-                                            'syllables': [], 'polysyllables': []}
-        party_data[instance['Party']]['words'].append(detailed_data['words'])
-        party_data[instance['Party']]['sentences'].append(detailed_data['sentences'])
-        party_data[instance['Party']]['syllables'].append(detailed_data['syllables'])
-        party_data[instance['Party']]['polysyllables'].append(detailed_data['polysyllables'])
-        party_data[instance['Party']]['flesch_kincaid'].append(flesch_kincaid)
-        party_data[instance['Party']]['SMOG'].append(smog)
-
-    # Calculate score details
-    # Create a list of details to find
-    detail_list = ['words', 'sentences', 'syllables', 'polysyllables', 'flesch_kincaid', 'SMOG']
-    scores = dict()
-    scores['Populist'] = dict()
-    scores['Non-populist'] = dict()
-    for party in party_data:
-        scores[party] = dict()
-        for detail in detail_list:
-            scores[party][detail] = {'average': np.average(party_data[party][detail]), 'sd': np.std(party_data[party][detail]), 'variance': np.var(party_data[party][detail])}
-
-    for detail in detail_list:
-        scores['Populist'][detail] = {'average': np.average(populist_readability[detail]), 'sd': np.std(populist_readability[detail]), 'variance': np.var(populist_readability[detail])}
-        scores['Non-populist'][detail] = {'average': np.average(non_populist_readability[detail]), 'sd': np.std(non_populist_readability[detail]), 'variance': np.var(non_populist_readability[detail])}
-
-    # Write scores to .txt file
-    with open('../analysis/' + outfile + '/' + data_type + '/readability.txt', 'w') as f:
-        f.write("In this file you can find the readability scores for populist parties and non-populist parties.")
-        for detail in detail_list:
-            f.write('-------------------------' + detail + '-------------------------\n')
-            f.write('\t \t \t Average \t SD \t Variance \n')
-            f.write('POPULIST'+ '\t' + '\t' + str(round(scores['Populist'][detail]['average'], 2)) + '\t' + str(round(scores['Populist'][detail]['sd'], 2)) + '\t' + str(round(scores['Populist'][detail]['variance'], 2)) + '\n')
-            for party in party_data:
-                if len(party) > 6:
-                    f.write('- ' + party + '\t' + str(round(scores[party][detail]['average'], 2)) + '\t' + str(round(scores[party][detail]['sd'], 2)) + '\t' + str(round(scores[party][detail]['variance'], 2)) + '\n')
-                else:
-                    f.write('- ' + party + '\t' + '\t' + '\t' + str(round(scores[party][detail]['average'], 2)) + '\t' + str(round(scores[party][detail]['sd'], 2)) + '\t' + str(round(scores[party][detail]['variance'], 2)) + '\n')
-            f.write('NON-POPULIST'+ '\t' + str(round(scores['Non-populist'][detail]['average'], 2)) + '\t' + str(round(scores['Non-populist'][detail]['sd'], 2)) + '\t' + str(round(scores['Non-populist'][detail]['variance'], 2)) + '\n')
-            for party in party_data:
-                if party in non_pop_party_list:
-                    if len(party) > 6:
-                        f.write('- ' + party + '\t' + str(round(scores[party][detail]['average'], 2)) + '\t' + str(round(scores[party][detail]['sd'], 2)) + '\t' + str(round(scores[party][detail]['variance'], 2)) + '\n')
-                    else:
-                        f.write('- ' + party + '\t' + '\t' + '\t' + str(round(scores[party][detail]['average'], 2)) + '\t' + str(round(scores[party][detail]['sd'], 2)) + '\t' + str(round(scores[party][detail]['variance'], 2)) + '\n')
-            f.write('\n')
+    readability_list = ['w/s', 'Leesindex A', 'Flesch', 'Flesch-Douma']
+    
+    for item in readability_list:
+        print(f'-------{item}-------')
+        print(f"Mean {item} scores of target label {target_label}")
+        averages = df_readability.groupby([target_label])[item].mean()
+        print(averages)
+        print('\n')
+        print(f"Std {item} scores of target label {target_label}")
+        std = df_readability.groupby([target_label])[item].std()
+        print(std)
+        print('\n')
 
 
 if get_dict['tfidf'] == True:
@@ -228,7 +166,6 @@ if get_dict['general'] == True:
         party_dict[instance['Party']]['amount_of_chars'] += len(instance['Tweet'])
     
     # Print information
-
     for party in party_dict:
         print(f"for {party}:")
         print(f"Average amount of words p.t.: {party_dict[party]['amount_of_words'] / party_dict[party]['amount_of_tweets']}")
