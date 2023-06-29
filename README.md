@@ -23,7 +23,7 @@ CODE:
 
 DATA:
 1. large_data: contains all the data, including the information on divisions and descriptions. For more information on the data, see the corresponding paper about this thesis.
-2. party_data_small.json: contains a .json file with information about the different parties. This data can be edited here if needed.
+2. party_data_small.json: contains a .json file with information about the different parties. This data can be edited here if needed. Necessary for retrieve_tweets.py.
 
 ----WHAT IS THE OUTPUT----
 - retrieve_tweets.py: returns a dataset with tweets. The following information is included: index number, party name, date of posting, tweet content, whether the party is considered populist or not, its role in the House of Representatives (opposition/coalition), horizontal ideology (left/right/middle), vertical ideology (progressive/conservative/middle).
